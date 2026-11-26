@@ -45,11 +45,19 @@ for (const [id, file, size] of [
   test(`${file} is ${size.width} × ${size.height} and matches what share.html draws today`, async ({
     page,
   }) => {
+    const committed = readFileSync(new URL(file, site))
+    // PNG header: width and height are the big-endian integers at bytes 16 and 20.
+    expect({ width: committed.readUInt32BE(16), height: committed.readUInt32BE(20) }).toEqual(size)
+    // The images are drawn on macOS (share-images); Linux antialiases text differently (~6% of
+    // pixels), which would hide a stale card. Pixels are compared where the images are made.
+    test.skip(
+      process.platform !== 'darwin',
+      'pixel comparison runs on macOS, where share-images draws the cards',
+    )
     await page.setViewportSize({ width: 1400, height: 3000 })
     await page.goto(shareUrl, { waitUntil: 'networkidle' })
     await page.evaluate(() => document.fonts.ready)
     const fresh = await page.locator(id).screenshot()
-    const committed = readFileSync(new URL(file, site))
     const ratio = await pixelDiff(page, fresh, committed)
     expect(ratio, `${file} is out of date: run pnpm --filter atlas-site share-images`).toBeLessThan(0.002)
   })
