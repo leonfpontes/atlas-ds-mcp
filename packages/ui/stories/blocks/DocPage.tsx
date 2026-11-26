@@ -10,8 +10,11 @@ import { GitHubIcon } from './icons'
 import { docsHref, editHref } from './links'
 import { useMode } from './theme'
 
-export const VERSION = '0.1.0'
-export const UPDATED = '2026-11-25'
+import pkg from '../../package.json'
+
+/** The @leonfpontes/atlas-ui version these docs describe. */
+export const VERSION = pkg.version
+export const UPDATED = '2026-11-26'
 
 export interface TocItem {
   id: string
