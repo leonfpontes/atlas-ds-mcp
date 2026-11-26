@@ -1,0 +1,141 @@
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+@import '@leonfpontes/atlas-ui/styles.css';
+
+@source '.';
+
+/* The site's own layout pieces that are easier to read as CSS than as utilities. Colors are tokens. */
+@layer components {
+  .wrap {
+    margin-inline: auto;
+    max-width: 1200px;
+    padding-inline: 24px;
+  }
+  @media (max-width: 600px) {
+    .wrap {
+      padding-inline: 16px;
+    }
+  }
+
+  /* Diff block: the canonical diff (docs/DESIGN.md → Code and labels). */
+  .diff-row {
+    display: block;
+    padding-right: 16px;
+    white-space: pre;
+  }
+  .diff-row[data-kind='del'] {
+    background: color-mix(in oklab, var(--code-del) 14%, var(--code-bg));
+    color: var(--code-del);
+  }
+  .diff-row[data-kind='add'] {
+    background: color-mix(in oklab, var(--code-add) 22%, var(--code-bg));
+    color: var(--code-add);
+  }
+  .diff-gutter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 76px;
+    padding-left: 12px;
+    user-select: none;
+  }
+  .issue-chip {
+    display: inline-grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px var(--code-dim);
+    color: var(--code-fg);
+    font: 600 11px var(--font-mono);
+  }
+
+  /* Sequence diagram. */
+  .seq-lifeline {
+    position: absolute;
+    top: 80px;
+    bottom: 12px;
+    width: 0;
+    border-left: 1.5px dashed var(--input);
+  }
+  .seq-msg {
+    position: relative;
+    height: 42px;
+  }
+  .seq-line {
+    position: absolute;
+    top: 30px;
+    height: 0;
+    border-top: 2px solid var(--foreground);
+  }
+  .seq-line[data-ret] {
+    border-top: 2px dashed var(--muted-foreground);
+  }
+  .seq-line::after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+  }
+  .seq-line[data-dir='r']::after {
+    right: -2px;
+    border-left: 10px solid var(--foreground);
+    border-right: 0;
+  }
+  .seq-line[data-dir='l']::after {
+    left: -2px;
+    border-right: 10px solid var(--muted-foreground);
+    border-left: 0;
+  }
+  .seq-label {
+    position: absolute;
+    top: 3px;
+    transform: translateX(-50%);
+    background: var(--background);
+    padding: 0 8px;
+    font: 14px var(--font-mono);
+    white-space: nowrap;
+  }
+  .step-num {
+    display: inline-grid;
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background: var(--foreground);
+    color: var(--background);
+    font: 600 11px var(--font-mono);
+  }
+
+  /* Scoreboard bars. */
+  .bar-without {
+    background: repeating-linear-gradient(135deg, var(--input) 0 3px, var(--border) 3px 6px);
+  }
+  .bar-draft {
+    box-shadow: inset 0 0 0 1.5px var(--primary);
+  }
+  .bar-na {
+    background: repeating-linear-gradient(90deg, var(--border) 0 4px, transparent 4px 8px);
+  }
+
+  /* Marker for example data or a caveat: amber means "example" or "warning", nothing else. */
+  .note-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px dashed var(--warning);
+    border-radius: var(--radius-sm);
+    background: var(--warning-subtle);
+    color: var(--warning);
+    padding: 2px 8px;
+    font: 500 12px/18px var(--font-sans);
+  }
+}

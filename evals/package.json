@@ -1,0 +1,22 @@
+{
+  "name": "atlas-evals",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evaluation: the same model builds each screen with and without the Atlas MCP server.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "eval": "node dist/run.js"
+  },
+  "dependencies": {
+    "valibot": "1.5.0"
+  }
+}

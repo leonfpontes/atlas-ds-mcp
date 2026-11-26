@@ -1,0 +1,614 @@
+{
+  "$comment": "Provisional manifest written with story B2 so the MCP server can be built and tested. Story F1 takes it over: it must match the real components in src/components/ui. Format: docs/API.md#manifest.",
+  "version": "0.1.0",
+  "importBase": "@/components/ui",
+  "components": [
+    {
+      "name": "Alert",
+      "summary": "A message in the flow of the page that explains a state: info, success, warning or error.",
+      "file": "alert",
+      "exports": ["Alert", "AlertTitle", "AlertDescription", "AlertAction"],
+      "props": [
+        {
+          "component": "Alert",
+          "name": "variant",
+          "type": "enum",
+          "values": ["default", "destructive", "success", "warning", "info"],
+          "default": "default",
+          "description": "destructive says what failed and what to do next; success, warning and info are Atlas additions. Pair each with its icon."
+        },
+        {
+          "component": "Alert",
+          "name": "role",
+          "type": "string",
+          "description": "Defaults to \"alert\" for destructive and \"status\" for the other tones."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Warning with icon and title",
+          "code": "<Alert variant=\"warning\">\n  <TriangleAlert />\n  <AlertTitle>Stock is low</AlertTitle>\n  <AlertDescription>3 items left. Reorder before Friday.</AlertDescription>\n</Alert>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Start with the status icon, then a title that says what happened, then the next step.",
+          "Put a dismiss Button (ghost, size icon, aria-label \"Dismiss\") in AlertAction."
+        ],
+        "dont": [
+          "Don't use an Alert to confirm a finished action; use a toast.",
+          "Don't rely on the color alone: keep the icon and the words."
+        ]
+      },
+      "storybook": "components-alert--docs"
+    },
+    {
+      "name": "Badge",
+      "summary": "A short label for a status or a category, next to the thing it describes.",
+      "file": "badge",
+      "exports": ["Badge"],
+      "props": [
+        {
+          "component": "Badge",
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "default",
+            "secondary",
+            "destructive",
+            "outline",
+            "ghost",
+            "link",
+            "success",
+            "warning",
+            "info"
+          ],
+          "default": "default",
+          "description": "Status variants (success, warning, info, destructive) always carry a text label."
+        },
+        {
+          "component": "Badge",
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false",
+          "description": "Render the child element (for example a link) with the badge styles."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Order status",
+          "code": "<Badge variant=\"success\">Paid</Badge>"
+        }
+      ],
+      "usage": {
+        "do": ["Pair a status variant with its icon and a word: <CircleCheck /> Paid."],
+        "dont": [
+          "Don't use a colored dot or a badge with no text for a status.",
+          "Don't round badges into pills."
+        ]
+      },
+      "storybook": "components-badge--docs"
+    },
+    {
+      "name": "Button",
+      "summary": "Starts an action. One primary button per view.",
+      "file": "button",
+      "exports": ["Button"],
+      "props": [
+        {
+          "component": "Button",
+          "name": "variant",
+          "type": "enum",
+          "values": ["default", "destructive", "outline", "secondary", "ghost", "link"],
+          "default": "default",
+          "description": "default is the one primary action; destructive deletes or cancels something for good, after a Dialog; link sits inside a sentence."
+        },
+        {
+          "component": "Button",
+          "name": "size",
+          "type": "enum",
+          "values": ["default", "lg", "icon"],
+          "default": "default",
+          "description": "default and icon are 40 px (44 px on touch); lg is 48 px. Icon buttons need an aria-label."
+        },
+        {
+          "component": "Button",
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false",
+          "description": "Render the child element (for example a link) with the button styles."
+        },
+        {
+          "component": "Button",
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Prefer explaining why an action is unavailable over disabling it silently."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Primary action",
+          "code": "<Button>Save order</Button>"
+        },
+        {
+          "title": "Icon button",
+          "code": "<Button variant=\"ghost\" size=\"icon\" aria-label=\"Copy command\">\n  <Copy />\n</Button>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Label with a verb and an object: \"Save order\", \"Copy command\".",
+          "Make one default (primary) button per view; the rest outline, secondary or ghost."
+        ],
+        "dont": [
+          "Don't put two default (primary) buttons in the same view.",
+          "Don't label a button OK or Submit."
+        ]
+      },
+      "storybook": "components-button--docs"
+    },
+    {
+      "name": "Card",
+      "summary": "A bordered surface that groups content about one thing.",
+      "file": "card",
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardTitle",
+        "CardDescription",
+        "CardAction",
+        "CardContent",
+        "CardFooter"
+      ],
+      "props": [],
+      "examples": [
+        {
+          "title": "Card with header and content",
+          "code": "<Card>\n  <CardHeader>\n    <CardTitle>Orders</CardTitle>\n    <CardDescription>Last 30 days</CardDescription>\n  </CardHeader>\n  <CardContent>…</CardContent>\n</Card>"
+        }
+      ],
+      "usage": {
+        "do": ["Use a Card to frame a table, a form or a summary."],
+        "dont": ["Don't build a grid of identical cards with an icon in a rounded square."]
+      },
+      "storybook": "components-card--docs"
+    },
+    {
+      "name": "Command",
+      "summary": "A searchable list of actions or items, opened with ⌘K or inline.",
+      "file": "command",
+      "exports": [
+        "Command",
+        "CommandDialog",
+        "CommandInput",
+        "CommandList",
+        "CommandEmpty",
+        "CommandGroup",
+        "CommandItem",
+        "CommandSeparator",
+        "CommandShortcut"
+      ],
+      "props": [
+        {
+          "component": "CommandDialog",
+          "name": "title",
+          "type": "string",
+          "default": "Command Palette",
+          "description": "Hidden title read by screen readers."
+        },
+        {
+          "component": "CommandDialog",
+          "name": "showCloseButton",
+          "type": "boolean",
+          "default": "true",
+          "description": "Shows the close button in the corner."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Command palette",
+          "code": "<CommandDialog open={open} onOpenChange={setOpen}>\n  <CommandInput placeholder=\"Search orders…\" />\n  <CommandList>\n    <CommandEmpty>No orders found.</CommandEmpty>\n    <CommandGroup heading=\"Orders\">\n      <CommandItem>#1042 · Ana Ruiz</CommandItem>\n    </CommandGroup>\n  </CommandList>\n</CommandDialog>"
+        }
+      ],
+      "usage": {
+        "do": ["Always include CommandEmpty with what to try next."],
+        "dont": ["Don't use Command for a short fixed list; use Select."]
+      },
+      "storybook": "components-command--docs"
+    },
+    {
+      "name": "Dialog",
+      "summary": "A modal window for a short task or a confirmation. Focus stays inside until it closes.",
+      "file": "dialog",
+      "exports": [
+        "Dialog",
+        "DialogTrigger",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTitle",
+        "DialogDescription",
+        "DialogClose"
+      ],
+      "props": [
+        {
+          "component": "DialogContent",
+          "name": "showCloseButton",
+          "type": "boolean",
+          "default": "true",
+          "description": "Shows the × button in the corner."
+        },
+        {
+          "component": "DialogFooter",
+          "name": "showCloseButton",
+          "type": "boolean",
+          "default": "false",
+          "description": "Adds an outline \"Close\" button to the footer."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Confirm a refund",
+          "code": "<Dialog>\n  <DialogTrigger asChild>\n    <Button variant=\"destructive\">Refund order</Button>\n  </DialogTrigger>\n  <DialogContent>\n    <DialogHeader>\n      <DialogTitle>Refund order #1042?</DialogTitle>\n      <DialogDescription>The customer gets $84.00 back. This can't be undone.</DialogDescription>\n    </DialogHeader>\n    <DialogFooter>\n      <DialogClose asChild>\n        <Button variant=\"outline\">Keep order</Button>\n      </DialogClose>\n      <Button variant=\"destructive\">Refund $84.00</Button>\n    </DialogFooter>\n  </DialogContent>\n</Dialog>"
+        }
+      ],
+      "usage": {
+        "do": ["Always give the Dialog a DialogTitle, even if it is visually hidden."],
+        "dont": ["Don't open a Dialog on page load."]
+      },
+      "storybook": "components-dialog--docs"
+    },
+    {
+      "name": "Input",
+      "summary": "A single-line text field. Always paired with a visible label.",
+      "file": "input",
+      "exports": ["Input"],
+      "props": [
+        {
+          "component": "Input",
+          "name": "type",
+          "type": "enum",
+          "values": ["text", "email", "password", "search", "number", "tel", "url", "date", "file"],
+          "default": "text",
+          "description": "Native input type."
+        },
+        {
+          "component": "Input",
+          "name": "aria-invalid",
+          "type": "boolean",
+          "default": "false",
+          "description": "Turns the border and ring to destructive. Pair it with an error message."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Search field with label",
+          "code": "<label htmlFor=\"order-search\">Search orders</label>\n<Input id=\"order-search\" type=\"search\" placeholder=\"Order number or customer\" />"
+        }
+      ],
+      "usage": {
+        "do": ["Use a visible label; the placeholder is only an example."],
+        "dont": ["Don't use the placeholder as the label."]
+      },
+      "storybook": "components-input--docs"
+    },
+    {
+      "name": "Select",
+      "summary": "Picks one option from a short list.",
+      "file": "select",
+      "exports": [
+        "Select",
+        "SelectTrigger",
+        "SelectValue",
+        "SelectContent",
+        "SelectGroup",
+        "SelectLabel",
+        "SelectItem",
+        "SelectSeparator"
+      ],
+      "props": [
+        {
+          "component": "SelectContent",
+          "name": "position",
+          "type": "enum",
+          "values": ["item-aligned", "popper"],
+          "default": "item-aligned",
+          "description": "popper places the list under the trigger; item-aligned covers it, like a native select."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Status filter",
+          "code": "<Select defaultValue=\"all\">\n  <SelectTrigger aria-label=\"Status\">\n    <SelectValue />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"all\">All statuses</SelectItem>\n    <SelectItem value=\"paid\">Paid</SelectItem>\n  </SelectContent>\n</Select>"
+        }
+      ],
+      "usage": {
+        "do": ["Use Select for 3 to 15 options; fewer fit as buttons or tabs."],
+        "dont": ["Don't use a native <select> next to Atlas controls."]
+      },
+      "storybook": "components-select--docs"
+    },
+    {
+      "name": "Sheet",
+      "summary": "A panel that slides in from an edge for details or a form, keeping the page behind.",
+      "file": "sheet",
+      "exports": [
+        "Sheet",
+        "SheetTrigger",
+        "SheetContent",
+        "SheetHeader",
+        "SheetFooter",
+        "SheetTitle",
+        "SheetDescription",
+        "SheetClose"
+      ],
+      "props": [
+        {
+          "component": "SheetContent",
+          "name": "side",
+          "type": "enum",
+          "values": ["top", "right", "bottom", "left"],
+          "default": "right",
+          "description": "Edge the panel slides in from."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Order details",
+          "code": "<Sheet>\n  <SheetTrigger asChild>\n    <Button variant=\"outline\">View details</Button>\n  </SheetTrigger>\n  <SheetContent side=\"right\">\n    <SheetHeader>\n      <SheetTitle>Order #1042</SheetTitle>\n    </SheetHeader>\n  </SheetContent>\n</Sheet>"
+        }
+      ],
+      "usage": {
+        "do": ["Use a Sheet for a form or details the user reads next to the list."],
+        "dont": ["Don't stack a Sheet on top of a Dialog."]
+      },
+      "storybook": "components-sheet--docs"
+    },
+    {
+      "name": "Sonner",
+      "aliases": ["Toast", "Toaster"],
+      "summary": "Toasts: short feedback that confirms an action and disappears on its own.",
+      "file": "sonner",
+      "exports": ["Toaster"],
+      "extraImports": [
+        {
+          "from": "sonner",
+          "names": ["toast"]
+        }
+      ],
+      "props": [
+        {
+          "component": "Toaster",
+          "name": "position",
+          "type": "enum",
+          "values": ["top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right"],
+          "default": "bottom-right",
+          "description": "Where toasts appear. Mount one Toaster at the root."
+        },
+        {
+          "component": "Toaster",
+          "name": "theme",
+          "type": "enum",
+          "values": ["light", "dark", "system"],
+          "default": "system",
+          "description": "Sonner's own theme switch. Colors come from the Atlas tokens either way."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Confirm a save",
+          "code": "// once, at the root of the app\n<Toaster />\n\n// after the action\ntoast.success(\"Order saved\")"
+        }
+      ],
+      "usage": {
+        "do": ["Confirm what happened in a few words: \"Order saved\"."],
+        "dont": ["Don't put an error the user must act on in a toast; use an Alert."]
+      },
+      "storybook": "components-toast--docs"
+    },
+    {
+      "name": "Table",
+      "summary": "Rows and columns of data, with a header row.",
+      "file": "table",
+      "exports": [
+        "Table",
+        "TableHeader",
+        "TableBody",
+        "TableFooter",
+        "TableHead",
+        "TableRow",
+        "TableCell",
+        "TableCaption"
+      ],
+      "props": [],
+      "examples": [
+        {
+          "title": "Orders",
+          "code": "<Table>\n  <TableHeader>\n    <TableRow>\n      <TableHead>Order</TableHead>\n      <TableHead>Status</TableHead>\n      <TableHead className=\"text-right\">Total</TableHead>\n    </TableRow>\n  </TableHeader>\n  <TableBody>\n    <TableRow>\n      <TableCell>#1042</TableCell>\n      <TableCell><Badge variant=\"success\">Paid</Badge></TableCell>\n      <TableCell className=\"text-right\">$84.00</TableCell>\n    </TableRow>\n  </TableBody>\n</Table>"
+        }
+      ],
+      "usage": {
+        "do": ["Right-align numbers and money."],
+        "dont": ["Don't build tabular data from divs or cards."]
+      },
+      "storybook": "components-table--docs"
+    },
+    {
+      "name": "Tabs",
+      "summary": "Switches between views of the same content without leaving the page.",
+      "file": "tabs",
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+      "props": [
+        {
+          "component": "Tabs",
+          "name": "orientation",
+          "type": "enum",
+          "values": ["horizontal", "vertical"],
+          "default": "horizontal",
+          "description": "Direction of the tab list and of the arrow keys."
+        },
+        {
+          "component": "TabsList",
+          "name": "variant",
+          "type": "enum",
+          "values": ["default", "line"],
+          "default": "default",
+          "description": "default is the segmented track for views inside the product; line is the underline used in docs and code samples."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Preview and code",
+          "code": "<Tabs defaultValue=\"preview\">\n  <TabsList>\n    <TabsTrigger value=\"preview\">Preview</TabsTrigger>\n    <TabsTrigger value=\"code\">Code</TabsTrigger>\n  </TabsList>\n  <TabsContent value=\"preview\">…</TabsContent>\n  <TabsContent value=\"code\">…</TabsContent>\n</Tabs>"
+        }
+      ],
+      "usage": {
+        "do": ["Keep tab labels to one or two words."],
+        "dont": ["Don't use tabs for steps that must happen in order."]
+      },
+      "storybook": "components-tabs--docs"
+    },
+    {
+      "name": "Tooltip",
+      "summary": "A short hint on hover or focus, for icon buttons and abbreviations.",
+      "file": "tooltip",
+      "exports": ["Tooltip", "TooltipTrigger", "TooltipContent", "TooltipProvider"],
+      "props": [
+        {
+          "component": "TooltipContent",
+          "name": "side",
+          "type": "enum",
+          "values": ["top", "right", "bottom", "left"],
+          "default": "top",
+          "description": "Side of the trigger the tooltip opens on."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Icon button hint",
+          "code": "<TooltipProvider>\n  <Tooltip>\n    <TooltipTrigger asChild>\n      <Button variant=\"ghost\" size=\"icon\" aria-label=\"Copy command\">\n        <Copy />\n      </Button>\n    </TooltipTrigger>\n    <TooltipContent>Copy command</TooltipContent>\n  </Tooltip>\n</TooltipProvider>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Wrap the app (or the part with tooltips) in one TooltipProvider; a Tooltip outside it throws.",
+          "Repeat the aria-label of an icon button in its tooltip."
+        ],
+        "dont": ["Don't hide information the user needs inside a tooltip."]
+      },
+      "storybook": "components-tooltip--docs"
+    }
+  ],
+  "rules": [
+    {
+      "id": "color-tokens-only",
+      "title": "Color only through tokens",
+      "components": [],
+      "tags": ["color", "token", "theme", "hex", "tailwind", "dark"],
+      "do": [
+        "Use token classes: bg-background, bg-card, text-foreground, text-muted-foreground, bg-primary, border-border.",
+        "Call list_tokens to find the token for a color."
+      ],
+      "dont": [
+        "Don't write hex, rgb or named colors (#7c3aed, white).",
+        "Don't use Tailwind palette classes such as bg-white or text-slate-900: they ignore the dark theme."
+      ]
+    },
+    {
+      "id": "one-primary-action",
+      "title": "One primary button per view",
+      "components": ["Button"],
+      "tags": ["button", "primary", "action", "cta"],
+      "do": ["Make the main action the default variant and the others outline, secondary or ghost."],
+      "dont": ["Don't put two default buttons side by side."]
+    },
+    {
+      "id": "status-color-icon-text",
+      "title": "Status is color, icon shape and text together",
+      "components": ["Badge", "Alert"],
+      "tags": ["status", "color", "icon", "accessibility", "success", "warning", "error", "info"],
+      "do": [
+        "Use the success, warning, info and destructive variants, each with its text and icon.",
+        "Map every status of a domain to one variant (paid → success, packing → warning)."
+      ],
+      "dont": ["Don't show a status by color alone."]
+    },
+    {
+      "id": "labels-say-what-happens",
+      "title": "Labels say what happens",
+      "components": ["Button", "Dialog"],
+      "tags": ["copy", "label", "button", "writing"],
+      "do": ["Use a verb and an object: \"Save order\", \"Refund $84.00\"."],
+      "dont": ["Don't use OK, Submit, Yes or No."]
+    },
+    {
+      "id": "public-imports",
+      "title": "Import each component from its public file",
+      "components": [],
+      "tags": ["import", "path", "module"],
+      "do": ["Import from @/components/ui/<file>, the line get_component returns."],
+      "dont": ["Don't import from Atlas internals (src, dist, internal) or straight from Radix."]
+    },
+    {
+      "id": "visible-labels",
+      "title": "Every field has a visible label",
+      "components": ["Input", "Select"],
+      "tags": ["form", "label", "input", "accessibility"],
+      "do": ["Put a label above the field and tie it with htmlFor and id."],
+      "dont": ["Don't rely on the placeholder as the label."]
+    },
+    {
+      "id": "confirm-destructive",
+      "title": "Confirm destructive actions",
+      "components": ["Dialog", "Button"],
+      "tags": ["delete", "refund", "destructive", "confirm"],
+      "do": ["Ask in a Dialog that says what will be lost and repeats the action on the button."],
+      "dont": ["Don't delete on a single click without a way back."]
+    },
+    {
+      "id": "tables-for-data",
+      "title": "Tables for tabular data",
+      "components": ["Table", "Card"],
+      "tags": ["table", "list", "data", "grid", "rows"],
+      "do": ["Use Table inside a Card for lists with more than two attributes per item."],
+      "dont": ["Don't build data grids from divs or a grid of cards."]
+    },
+    {
+      "id": "toast-confirms-alert-explains",
+      "title": "A toast confirms, an Alert explains",
+      "components": ["Sonner", "Alert"],
+      "tags": ["feedback", "toast", "notification", "error", "message"],
+      "do": ["Use toast() after an action succeeds; use an Alert for a state the user must read or fix."],
+      "dont": ["Don't show errors that need action in a toast that disappears."]
+    },
+    {
+      "id": "borders-not-shadows",
+      "title": "Borders, not shadows",
+      "components": ["Card"],
+      "tags": ["shadow", "elevation", "border", "surface"],
+      "do": ["Separate surfaces with a 1 px border-border."],
+      "dont": [
+        "Don't add shadows to cards or sections; only overlays (Dialog, Sheet, Popover, toast) have one."
+      ]
+    },
+    {
+      "id": "no-pills",
+      "title": "Small radius, no pills",
+      "components": ["Button", "Badge"],
+      "tags": ["radius", "rounded", "pill", "shape"],
+      "do": [
+        "Keep the component radius: rounded-md on controls and badges, rounded-xl on cards (8.4 px at most)."
+      ],
+      "dont": ["Don't use rounded-full on buttons, badges or inputs."]
+    },
+    {
+      "id": "amber-means-example",
+      "title": "Amber means example or warning",
+      "components": ["Badge", "Alert"],
+      "tags": ["warning", "amber", "example", "color"],
+      "do": ["Mark unmeasured numbers with an \"Example data\" warning badge."],
+      "dont": ["Don't use the warning color for decoration."]
+    }
+  ]
+}

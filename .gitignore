@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.venv/
+__pycache__/
+.env*
+!.env.example
+.vercel
+CLAUDE.local.md
+.DS_Store
+storybook-static/
+*.tsbuildinfo
+mcp/data/

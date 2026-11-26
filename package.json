@@ -1,0 +1,44 @@
+{
+  "name": "atlas",
+  "private": true,
+  "description": "Atlas: a design system and an MCP server that teaches it to coding agents.",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter atlas-site dev",
+    "build": "pnpm -r --if-present run build",
+    "typecheck": "tsc -p tsconfig.json && pnpm -r --if-present run typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "e2e": "playwright test --pass-with-no-tests",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm build && pnpm smoke && pnpm test:built",
+    "smoke": "pnpm --filter @leonfpontes/design-system-mcp smoke",
+    "mcp": "pnpm --filter @leonfpontes/design-system-mcp start",
+    "eval": "pnpm --filter @leonfpontes/design-system-mcp... --filter atlas-evals build && pnpm --filter atlas-evals eval",
+    "storybook": "pnpm --filter @leonfpontes/atlas-ui storybook",
+    "build-storybook": "pnpm --filter @leonfpontes/atlas-ui build-storybook",
+    "readme": "UPDATE_README=1 vitest run site/src/lib/readme.test.ts",
+    "test:built": "vitest run evals/src/render.test.ts tests/mcp-built.test.ts tests/api-mcp.test.ts",
+    "qa": "pnpm check && pnpm e2e"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@leonfpontes/design-system-mcp": "workspace:*",
+    "@playwright/test": "1.65.1",
+    "@types/node": "^22.20.5",
+    "@vitest/coverage-v8": "5.1.2",
+    "eslint": "10.15.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.14.0",
+    "prettier": "3.10.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.74.0",
+    "vitest": "5.1.2"
+  }
+}

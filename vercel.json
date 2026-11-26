@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "site/dist",
+  "functions": {
+    "api/mcp.ts": {
+      "includeFiles": "{mcp/data/manifest.json,packages/tokens/tokens.json}",
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [{ "source": "/mcp", "destination": "/api/mcp" }],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

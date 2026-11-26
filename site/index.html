@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#11151C" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Theme before first paint: the system setting, or ?theme=light|dark to force one.
+      ;(function () {
+        var forced = new URLSearchParams(location.search).get('theme')
+        var dark = forced ? forced === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.classList.toggle('dark', dark)
+      })()
+    </script>
+    <title>How it works · Atlas</title>
+    <meta
+      name="description"
+      content="Your coding agent gets the design system, then checks its own screen. An MCP server with the Atlas tokens, shadcn/ui components and usage rules."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:site_name" content="Atlas" />
+    <meta
+      property="og:title"
+      content="Atlas · Your coding agent gets the design system, then checks its own screen."
+    />
+    <meta
+      property="og:description"
+      content="Tokens, shadcn/ui components and usage rules over MCP, plus a tool that reviews the code."
+    />
+    <meta property="og:image" content="__SITE_URL__/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Atlas: a diff where validate_screen found 4 issues and the agent fixed them."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="__SITE_URL__/og.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

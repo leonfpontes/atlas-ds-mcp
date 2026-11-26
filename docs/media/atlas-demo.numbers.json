@@ -1,0 +1,9 @@
+{
+  "lookups": "98%",
+  "without": "23%",
+  "prompts": 20,
+  "runs": 3,
+  "model": "claude-haiku-5-5",
+  "runDate": "2026-11-26",
+  "standIns": false
+}

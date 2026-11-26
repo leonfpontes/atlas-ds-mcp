@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Coding agents guess at your design system.
+
+2
+00:00:05.000 --> 00:00:10.000
+Hex colors, made-up components, wrong props. It looks fine; it isn’t your system.
+
+3
+00:00:10.000 --> 00:00:14.600
+Here the agent asks Atlas to check a screen.
+
+4
+00:00:14.600 --> 00:00:21.000
+validate_screen finds 4 issues, each with a line, a rule and a fix.
+
+5
+00:00:21.000 --> 00:00:28.000
+The agent looks up the real components instead of guessing.
+
+6
+00:00:28.000 --> 00:00:38.000
+It fixes each line: a public import, Card, a defined component, a real variant.
+
+7
+00:00:38.000 --> 00:00:43.000
+Then it checks again: 0 issues.
+
+8
+00:00:43.000 --> 00:00:50.000
+The agent can run this check on every screen, before you review it.
+
+9
+00:00:50.000 --> 00:01:00.000
+Measured on 20 prompts × 3 runs: valid screens with the Atlas lookups vs without.

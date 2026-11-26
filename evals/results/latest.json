@@ -1,0 +1,4169 @@
+{
+  "model": "claude-haiku-5-5",
+  "runAt": "2026-11-26T00:10:28.919Z",
+  "atlasVersion": "0.1.0",
+  "promptVersion": "8a519b72",
+  "cases": 20,
+  "runsPerCase": 3,
+  "renderMode": "components",
+  "budgetUsd": 3,
+  "totalCostUsd": 0.8203,
+  "variants": {
+    "without-mcp": {
+      "screens": 60,
+      "failed": 0,
+      "runs": 3,
+      "validPercent": 23.3,
+      "renderedPercent": 35,
+      "issuesPerScreen": 3.28,
+      "tokensPerScreen": 5122,
+      "toolCallsPerScreen": 0,
+      "selfChecksPerScreen": 0,
+      "costUsd": 0.049,
+      "totalCostUsd": 0.1469,
+      "stdDev": {
+        "validPercent": 7.6,
+        "renderedPercent": 0,
+        "issuesPerScreen": 0.67,
+        "tokensPerScreen": 198,
+        "costUsd": 0.002
+      }
+    },
+    "docs-mcp": {
+      "screens": 60,
+      "failed": 0,
+      "runs": 3,
+      "validPercent": 98.3,
+      "renderedPercent": 98.3,
+      "issuesPerScreen": 0.02,
+      "tokensPerScreen": 29791,
+      "toolCallsPerScreen": 8.6,
+      "selfChecksPerScreen": 0,
+      "costUsd": 0.0907,
+      "totalCostUsd": 0.272,
+      "stdDev": {
+        "validPercent": 2.9,
+        "renderedPercent": 2.9,
+        "issuesPerScreen": 0.03,
+        "tokensPerScreen": 2865,
+        "costUsd": 0.0015
+      }
+    },
+    "with-mcp": {
+      "screens": 60,
+      "failed": 0,
+      "runs": 3,
+      "validPercent": 100,
+      "renderedPercent": 100,
+      "issuesPerScreen": 0,
+      "tokensPerScreen": 58311,
+      "toolCallsPerScreen": 9.7,
+      "selfChecksPerScreen": 1.3,
+      "costUsd": 0.1338,
+      "totalCostUsd": 0.4014,
+      "stdDev": {
+        "validPercent": 0,
+        "renderedPercent": 0,
+        "issuesPerScreen": 0,
+        "tokensPerScreen": 4358,
+        "costUsd": 0.0074
+      },
+      "firstDraft": {
+        "validPercent": 96.7,
+        "renderedPercent": 98.3,
+        "issuesPerScreen": 0.02,
+        "stdDev": {
+          "validPercent": 2.9,
+          "renderedPercent": 2.9,
+          "issuesPerScreen": 0.03
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "caseId": "orders-table",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "hard-coded-color",
+          "line": 174,
+          "message": "The class text-stone-900 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 177,
+          "message": "The class text-stone-500 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 184,
+          "message": "The class text-stone-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 197,
+          "message": "The class border-stone-200 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 197,
+          "message": "The class bg-white is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 211,
+          "message": "The class text-stone-500 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 222,
+          "message": "The class text-stone-900 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 225,
+          "message": "The class text-stone-500 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 228,
+          "message": "The class text-stone-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 230,
+          "message": "The class text-stone-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 237,
+          "message": "The class text-stone-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 241,
+          "message": "The class text-stone-900 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": true,
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 299,
+      "outputTokens": 3392,
+      "costUsd": 0.0017259
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19600,
+      "outputTokens": 3875,
+      "costUsd": 0.0037113299999999997
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 2,
+      "requests": 5,
+      "inputTokens": 36100,
+      "outputTokens": 7178,
+      "costUsd": 0.005368110000000001
+    },
+    {
+      "caseId": "product-form",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 23,
+          "message": "Atlas has no \"textarea\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 302,
+      "outputTokens": 3795,
+      "costUsd": 0.0019277
+    },
+    {
+      "caseId": "product-form",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 27466,
+      "outputTokens": 4379,
+      "costUsd": 0.00420041
+    },
+    {
+      "caseId": "product-form",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 2,
+      "requests": 5,
+      "inputTokens": 57773,
+      "outputTokens": 8609,
+      "costUsd": 0.00719228
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "hard-coded-color",
+          "line": 136,
+          "message": "The class border-emerald-200 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 136,
+          "message": "The class bg-emerald-50 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 136,
+          "message": "The class text-emerald-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 137,
+          "message": "The class border-rose-200 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 137,
+          "message": "The class bg-rose-50 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 137,
+          "message": "The class text-rose-700 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": true,
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 299,
+      "outputTokens": 5221,
+      "costUsd": 0.0026404
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19371,
+      "outputTokens": 6956,
+      "costUsd": 0.005243790000000001
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 52434,
+      "outputTokens": 7737,
+      "costUsd": 0.006592605
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 277,
+      "outputTokens": 2070,
+      "costUsd": 0.0010627
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 6,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19190,
+      "outputTokens": 2814,
+      "costUsd": 0.0031361350000000004
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 7,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 22922,
+      "outputTokens": 3110,
+      "costUsd": 0.00284197
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 16,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 17,
+          "message": "Atlas has no \"separator\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 4924,
+      "costUsd": 0.00249
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 20722,
+      "outputTokens": 8473,
+      "costUsd": 0.006157365000000001
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 49130,
+      "outputTokens": 8128,
+      "costUsd": 0.00684005
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 6,
+          "message": "Atlas has no buttonVariants."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 10,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 11,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 12,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"alert-dialog\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/alert-dialog\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 3183,
+      "costUsd": 0.0016194
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 13995,
+      "outputTokens": 2736,
+      "costUsd": 0.0024597200000000003
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 7,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 23630,
+      "outputTokens": 4193,
+      "costUsd": 0.0035016399999999994
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "invalid-prop",
+          "line": 208,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": true,
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 4380,
+      "costUsd": 0.0022179
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 20859,
+      "outputTokens": 5703,
+      "costUsd": 0.0048877
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 52052,
+      "outputTokens": 7325,
+      "costUsd": 0.006610369999999999
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"avatar\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"avatar\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 23,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 24,
+          "message": "Atlas has no \"textarea\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 206,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 210,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 263,
+          "message": "The class text-yellow-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 263,
+          "message": "The class dark:text-yellow-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 345,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/avatar\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 6203,
+      "costUsd": 0.0031295
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 22199,
+      "outputTokens": 6449,
+      "costUsd": 0.005327574999999999
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 12,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 55450,
+      "outputTokens": 9678,
+      "costUsd": 0.00801014
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"separator\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 282,
+      "outputTokens": 4261,
+      "costUsd": 0.0021587
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 20282,
+      "outputTokens": 5416,
+      "costUsd": 0.00465839
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 58216,
+      "outputTokens": 9198,
+      "costUsd": 0.00773455
+    },
+    {
+      "caseId": "command-search",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 276,
+      "outputTokens": 4858,
+      "costUsd": 0.0024565999999999998
+    },
+    {
+      "caseId": "command-search",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 4,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 10375,
+      "outputTokens": 4684,
+      "costUsd": 0.0030698849999999996
+    },
+    {
+      "caseId": "command-search",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 7,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 43944,
+      "outputTokens": 9952,
+      "costUsd": 0.00699726
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 7,
+          "message": "Atlas has no \"checkbox\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 10,
+          "message": "Atlas has no \"slider\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 11,
+          "message": "Atlas has no \"switch\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 135,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 163,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 175,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/checkbox\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 276,
+      "outputTokens": 5985,
+      "costUsd": 0.0030201
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 28866,
+      "outputTokens": 9412,
+      "costUsd": 0.006805085
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 12,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 63520,
+      "outputTokens": 11036,
+      "costUsd": 0.00891727
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"separator\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 281,
+      "outputTokens": 5184,
+      "costUsd": 0.0026200999999999998
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 23266,
+      "outputTokens": 6980,
+      "costUsd": 0.005633530000000001
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 49238,
+      "outputTokens": 8212,
+      "costUsd": 0.00687485
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 23,
+          "message": "Atlas has no \"switch\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 282,
+      "outputTokens": 4942,
+      "costUsd": 0.0024992
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 29227,
+      "outputTokens": 7309,
+      "costUsd": 0.00572603
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 75509,
+      "outputTokens": 12627,
+      "costUsd": 0.00987999
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"skeleton\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/skeleton\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 262,
+      "outputTokens": 3998,
+      "costUsd": 0.0020252
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 6,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 17950,
+      "outputTokens": 3017,
+      "costUsd": 0.0031832599999999994
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 47963,
+      "outputTokens": 5978,
+      "costUsd": 0.00562343
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 6,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 7,
+          "message": "Atlas has no \"checkbox\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 132,
+          "message": "The class text-green-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 4861,
+      "costUsd": 0.0024584
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 22044,
+      "outputTokens": 6693,
+      "costUsd": 0.0054426200000000004
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 13,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 45512,
+      "outputTokens": 8009,
+      "costUsd": 0.006384535
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 18,
+          "message": "Atlas has no \"label\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 284,
+      "outputTokens": 4958,
+      "costUsd": 0.0025074
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19823,
+      "outputTokens": 3933,
+      "costUsd": 0.003874465
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 50226,
+      "outputTokens": 7866,
+      "costUsd": 0.006117245
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 90,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 101,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 141,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 2986,
+      "costUsd": 0.0015209000000000002
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19087,
+      "outputTokens": 2873,
+      "costUsd": 0.0032486700000000004
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 54208,
+      "outputTokens": 4169,
+      "costUsd": 0.00471928
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 292,
+      "outputTokens": 4185,
+      "costUsd": 0.0021217
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 23287,
+      "outputTokens": 4002,
+      "costUsd": 0.003441235
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 37311,
+      "outputTokens": 6092,
+      "costUsd": 0.004901965
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "hard-coded-color",
+          "line": 187,
+          "message": "The class border-emerald-600/40 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 187,
+          "message": "The class text-emerald-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 187,
+          "message": "The class dark:text-emerald-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 188,
+          "message": "The class border-amber-600/40 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 188,
+          "message": "The class text-amber-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 188,
+          "message": "The class dark:text-amber-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 194,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 213,
+          "message": "The class border-amber-500/50 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 213,
+          "message": "The class bg-amber-50 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 213,
+          "message": "The class text-amber-900 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 213,
+          "message": "The class dark:bg-amber-950/30 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 213,
+          "message": "The class dark:text-amber-200 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 249,
+          "message": "The class text-amber-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 283,
+          "message": "The class text-amber-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 283,
+          "message": "The class dark:text-amber-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 296,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 321,
+          "message": "The class text-emerald-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 321,
+          "message": "The class dark:text-emerald-400 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": true,
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 274,
+      "outputTokens": 9976,
+      "costUsd": 0.0050154
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 21516,
+      "outputTokens": 10107,
+      "costUsd": 0.00707419
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 12,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 74681,
+      "outputTokens": 17124,
+      "costUsd": 0.012620395
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "without-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"separator\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 4455,
+      "costUsd": 0.0022555
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "docs-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 20611,
+      "outputTokens": 6099,
+      "costUsd": 0.00505309
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "with-mcp",
+      "run": 1,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 41514,
+      "outputTokens": 9134,
+      "costUsd": 0.00738171
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 299,
+      "outputTokens": 3456,
+      "costUsd": 0.0017579000000000002
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 26709,
+      "outputTokens": 4433,
+      "costUsd": 0.003986965
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 2,
+      "requests": 5,
+      "inputTokens": 35568,
+      "outputTokens": 6825,
+      "costUsd": 0.00495445
+    },
+    {
+      "caseId": "product-form",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 6,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 7,
+          "message": "Atlas has no \"textarea\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 302,
+      "outputTokens": 4056,
+      "costUsd": 0.0020581999999999996
+    },
+    {
+      "caseId": "product-form",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 27503,
+      "outputTokens": 4833,
+      "costUsd": 0.0042585
+    },
+    {
+      "caseId": "product-form",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 48832,
+      "outputTokens": 7563,
+      "costUsd": 0.00626109
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "hard-coded-color",
+          "line": 168,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 169,
+          "message": "The class text-red-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 175,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 175,
+          "message": "The class text-red-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": true,
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 299,
+      "outputTokens": 5144,
+      "costUsd": 0.0026019000000000003
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 18723,
+      "outputTokens": 5494,
+      "costUsd": 0.0043403650000000005
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 39937,
+      "outputTokens": 9464,
+      "costUsd": 0.007279319999999999
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 277,
+      "outputTokens": 1982,
+      "costUsd": 0.0010187
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 6,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19212,
+      "outputTokens": 2856,
+      "costUsd": 0.002991525
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 38558,
+      "outputTokens": 3085,
+      "costUsd": 0.0037006699999999997
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 16,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 17,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 168,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 6493,
+      "costUsd": 0.0032745
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 21493,
+      "outputTokens": 7067,
+      "costUsd": 0.00538284
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 27246,
+      "outputTokens": 8055,
+      "costUsd": 0.00484504
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 10,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 11,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 12,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 191,
+          "message": "The class text-white is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/alert-dialog\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 2896,
+      "costUsd": 0.0014759
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 22029,
+      "outputTokens": 3027,
+      "costUsd": 0.0026385899999999997
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 7,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 23316,
+      "outputTokens": 3638,
+      "costUsd": 0.0027523749999999996
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 3951,
+      "costUsd": 0.0020034000000000002
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 20117,
+      "outputTokens": 4583,
+      "costUsd": 0.0040682
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 25136,
+      "outputTokens": 5375,
+      "costUsd": 0.0038013399999999994
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 5,
+          "message": "Atlas has no \"avatar\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 5,
+          "message": "Atlas has no \"avatar\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 16,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 17,
+          "message": "Atlas has no \"textarea\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/avatar\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 5500,
+      "costUsd": 0.002778
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 21355,
+      "outputTokens": 6577,
+      "costUsd": 0.0052174199999999995
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 13,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 80225,
+      "outputTokens": 11933,
+      "costUsd": 0.009263325000000001
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 282,
+      "outputTokens": 5226,
+      "costUsd": 0.0026412
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19556,
+      "outputTokens": 5583,
+      "costUsd": 0.0044814
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 56675,
+      "outputTokens": 7919,
+      "costUsd": 0.0065277550000000005
+    },
+    {
+      "caseId": "command-search",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 276,
+      "outputTokens": 5374,
+      "costUsd": 0.0027145999999999997
+    },
+    {
+      "caseId": "command-search",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 6,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 23533,
+      "outputTokens": 4412,
+      "costUsd": 0.003520125
+    },
+    {
+      "caseId": "command-search",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": false,
+        "renderError": "CommandSeparator is not defined",
+        "valid": false
+      },
+      "toolCalls": 6,
+      "selfChecks": 2,
+      "requests": 5,
+      "inputTokens": 29292,
+      "outputTokens": 5485,
+      "costUsd": 0.00396685
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 7,
+          "message": "Atlas has no \"checkbox\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 10,
+          "message": "Atlas has no \"slider\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 11,
+          "message": "Atlas has no \"switch\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 142,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 171,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 195,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/checkbox\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 276,
+      "outputTokens": 6397,
+      "costUsd": 0.0032261
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 30697,
+      "outputTokens": 8118,
+      "costUsd": 0.00612223
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 56573,
+      "outputTokens": 12910,
+      "costUsd": 0.009672675
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 23,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 24,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 25,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 26,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 27,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 28,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 29,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 30,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 31,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 208,
+          "message": "The class text-white is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 281,
+      "outputTokens": 5545,
+      "costUsd": 0.0028006
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 23266,
+      "outputTokens": 6517,
+      "costUsd": 0.005234475000000001
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 13,
+      "selfChecks": 2,
+      "requests": 7,
+      "inputTokens": 95542,
+      "outputTokens": 11554,
+      "costUsd": 0.00868288
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 23,
+          "message": "Atlas has no \"switch\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 282,
+      "outputTokens": 4489,
+      "costUsd": 0.0022727
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 29360,
+      "outputTokens": 5248,
+      "costUsd": 0.004309885
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 54792,
+      "outputTokens": 11090,
+      "costUsd": 0.007000035
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"skeleton\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/skeleton\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 262,
+      "outputTokens": 5112,
+      "costUsd": 0.0025821999999999998
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 29026,
+      "outputTokens": 3973,
+      "costUsd": 0.00393964
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 7,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 35412,
+      "outputTokens": 5535,
+      "costUsd": 0.00483993
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 7,
+          "message": "Atlas has no \"checkbox\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 94,
+          "message": "The class bg-emerald-100 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 94,
+          "message": "The class text-emerald-700 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/checkbox\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 4317,
+      "costUsd": 0.0021864000000000002
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 31232,
+      "outputTokens": 6341,
+      "costUsd": 0.00521953
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 12,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 56556,
+      "outputTokens": 9831,
+      "costUsd": 0.007993855000000001
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 18,
+          "message": "Atlas has no \"label\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 284,
+      "outputTokens": 5965,
+      "costUsd": 0.0030109
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 13,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 38730,
+      "outputTokens": 9027,
+      "costUsd": 0.0066815550000000005
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 13,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 65805,
+      "outputTokens": 12397,
+      "costUsd": 0.009030390000000001
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 95,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 3059,
+      "costUsd": 0.0015574
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19984,
+      "outputTokens": 2733,
+      "costUsd": 0.0030336549999999997
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 7,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 24196,
+      "outputTokens": 4955,
+      "costUsd": 0.0037624899999999994
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 292,
+      "outputTokens": 3820,
+      "costUsd": 0.0019392
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 23201,
+      "outputTokens": 4103,
+      "costUsd": 0.0033044600000000004
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 34511,
+      "outputTokens": 5639,
+      "costUsd": 0.004067865
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 25,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 200,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 258,
+          "message": "Button has no size \"icon-sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 267,
+          "message": "Button has no size \"icon-sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 305,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 274,
+      "outputTokens": 8575,
+      "costUsd": 0.0043149
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 21120,
+      "outputTokens": 7933,
+      "costUsd": 0.005871105
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 48864,
+      "outputTokens": 14815,
+      "costUsd": 0.010751340000000002
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "without-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"separator\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 3913,
+      "costUsd": 0.0019845
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "docs-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 11,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 38159,
+      "outputTokens": 6058,
+      "costUsd": 0.005262185000000001
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "with-mcp",
+      "run": 2,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 40731,
+      "outputTokens": 8371,
+      "costUsd": 0.006711435
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 299,
+      "outputTokens": 2760,
+      "costUsd": 0.0014099000000000002
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 20889,
+      "outputTokens": 3862,
+      "costUsd": 0.002964535
+    },
+    {
+      "caseId": "orders-table",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 2,
+      "requests": 5,
+      "inputTokens": 35596,
+      "outputTokens": 6862,
+      "costUsd": 0.00433406
+    },
+    {
+      "caseId": "product-form",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 16,
+          "message": "Atlas has no \"textarea\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 129,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 302,
+      "outputTokens": 4029,
+      "costUsd": 0.0020447
+    },
+    {
+      "caseId": "product-form",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 26579,
+      "outputTokens": 5322,
+      "costUsd": 0.004385544999999999
+    },
+    {
+      "caseId": "product-form",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 47070,
+      "outputTokens": 8121,
+      "costUsd": 0.00653098
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "hard-coded-color",
+          "line": 129,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 129,
+          "message": "The class text-red-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": true,
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 299,
+      "outputTokens": 5364,
+      "costUsd": 0.0027119
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 7,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19479,
+      "outputTokens": 7014,
+      "costUsd": 0.005110454999999999
+    },
+    {
+      "caseId": "sales-dashboard",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 75761,
+      "outputTokens": 11002,
+      "costUsd": 0.00866107
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 277,
+      "outputTokens": 2906,
+      "costUsd": 0.0014807
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 6,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19192,
+      "outputTokens": 2058,
+      "costUsd": 0.0025911750000000002
+    },
+    {
+      "caseId": "empty-orders",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 1,
+      "requests": 6,
+      "inputTokens": 64259,
+      "outputTokens": 3386,
+      "costUsd": 0.0041862800000000006
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 27,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 28,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 220,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 7216,
+      "costUsd": 0.003636
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 21439,
+      "outputTokens": 6591,
+      "costUsd": 0.005137744999999999
+    },
+    {
+      "caseId": "checkout-error",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 71898,
+      "outputTokens": 10203,
+      "costUsd": 0.00744968
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 10,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 11,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 12,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"alert-dialog\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 145,
+          "message": "The class text-white is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/alert-dialog\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 2925,
+      "costUsd": 0.0014904
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 21863,
+      "outputTokens": 2813,
+      "costUsd": 0.00251912
+    },
+    {
+      "caseId": "delete-product-dialog",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 36166,
+      "outputTokens": 5626,
+      "costUsd": 0.00446857
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "hard-coded-color",
+          "line": 105,
+          "message": "The class text-amber-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 105,
+          "message": "The class dark:text-amber-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 142,
+          "message": "The class bg-amber-50/60 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 142,
+          "message": "The class dark:bg-amber-950/20 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 166,
+          "message": "The class border-amber-500 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 166,
+          "message": "The class text-amber-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 166,
+          "message": "The class dark:text-amber-400 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 178,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": true,
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 3577,
+      "costUsd": 0.0018164000000000001
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 36482,
+      "outputTokens": 4122,
+      "costUsd": 0.00419128
+    },
+    {
+      "caseId": "inventory-low-stock",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 26008,
+      "outputTokens": 5939,
+      "costUsd": 0.004169225
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 12,
+          "message": "Atlas has no \"avatar\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 12,
+          "message": "Atlas has no \"avatar\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 23,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 24,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 25,
+          "message": "Atlas has no \"textarea\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/avatar\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 6532,
+      "costUsd": 0.003294
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 21287,
+      "outputTokens": 6174,
+      "costUsd": 0.00500742
+    },
+    {
+      "caseId": "customer-profile",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 14,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 84732,
+      "outputTokens": 14113,
+      "costUsd": 0.010663929999999999
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"separator\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 282,
+      "outputTokens": 4947,
+      "costUsd": 0.0025017
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 36823,
+      "outputTokens": 5354,
+      "costUsd": 0.00471271
+    },
+    {
+      "caseId": "delivery-slot-picker",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 13,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 59682,
+      "outputTokens": 9028,
+      "costUsd": 0.007332665
+    },
+    {
+      "caseId": "command-search",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 276,
+      "outputTokens": 3806,
+      "costUsd": 0.0019306
+    },
+    {
+      "caseId": "command-search",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 6,
+      "selfChecks": 0,
+      "requests": 5,
+      "inputTokens": 36940,
+      "outputTokens": 5030,
+      "costUsd": 0.0043450599999999995
+    },
+    {
+      "caseId": "command-search",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 7,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 60144,
+      "outputTokens": 8759,
+      "costUsd": 0.006967445
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 7,
+          "message": "Atlas has no \"checkbox\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 9,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 10,
+          "message": "Atlas has no \"slider\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 144,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 251,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 266,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/checkbox\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 276,
+      "outputTokens": 6732,
+      "costUsd": 0.0033936
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 27472,
+      "outputTokens": 7716,
+      "costUsd": 0.005653575000000001
+    },
+    {
+      "caseId": "mobile-filters-sheet",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [
+          {
+            "kind": "invalid-prop",
+            "line": 232,
+            "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+          }
+        ],
+        "rendered": true,
+        "valid": false
+      },
+      "toolCalls": 11,
+      "selfChecks": 2,
+      "requests": 5,
+      "inputTokens": 73652,
+      "outputTokens": 16137,
+      "costUsd": 0.01183474
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 22,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 161,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 281,
+      "outputTokens": 4964,
+      "costUsd": 0.0025101
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 20861,
+      "outputTokens": 4917,
+      "costUsd": 0.004328315
+    },
+    {
+      "caseId": "order-detail",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 52023,
+      "outputTokens": 9818,
+      "costUsd": 0.0069375
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 15,
+          "message": "Atlas has no \"label\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 23,
+          "message": "Atlas has no \"switch\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/label\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 282,
+      "outputTokens": 5406,
+      "costUsd": 0.0027312
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 29451,
+      "outputTokens": 5724,
+      "costUsd": 0.00455995
+    },
+    {
+      "caseId": "settings-store",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 71950,
+      "outputTokens": 10273,
+      "costUsd": 0.00804341
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 7,
+          "message": "Atlas has no \"skeleton\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/skeleton\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 262,
+      "outputTokens": 4707,
+      "costUsd": 0.0023797
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 21941,
+      "outputTokens": 3768,
+      "costUsd": 0.00287987
+    },
+    {
+      "caseId": "loading-orders",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 10,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 35963,
+      "outputTokens": 5577,
+      "costUsd": 0.0043831600000000005
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 8,
+          "message": "Atlas has no \"checkbox\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 10,
+          "message": "Atlas has no \"label\" component."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/checkbox\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 5684,
+      "costUsd": 0.0028699
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 11,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 32292,
+      "outputTokens": 5219,
+      "costUsd": 0.00479931
+    },
+    {
+      "caseId": "supplier-invite",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 1,
+      "requests": 5,
+      "inputTokens": 55646,
+      "outputTokens": 9685,
+      "costUsd": 0.00759723
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 284,
+      "outputTokens": 5156,
+      "costUsd": 0.0026064
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 13,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 32902,
+      "outputTokens": 8818,
+      "costUsd": 0.00674958
+    },
+    {
+      "caseId": "promotions-list",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 13,
+      "selfChecks": 2,
+      "requests": 6,
+      "inputTokens": 67459,
+      "outputTokens": 14220,
+      "costUsd": 0.0092199
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 13,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 80,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 139,
+          "message": "Button has no size \"icon-sm\". It accepts: default, lg, icon."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 279,
+      "outputTokens": 3723,
+      "costUsd": 0.0018894
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 58,
+          "message": "Atlas has no CircleCheck, and this file doesn't define or import it."
+        }
+      ],
+      "rendered": false,
+      "renderError": "CircleCheck is not defined",
+      "valid": false,
+      "toolCalls": 9,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 34966,
+      "outputTokens": 2878,
+      "costUsd": 0.0034557950000000002
+    },
+    {
+      "caseId": "refund-success",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 37985,
+      "outputTokens": 5109,
+      "costUsd": 0.004800205
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 292,
+      "outputTokens": 4303,
+      "costUsd": 0.0021807
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 4,
+      "inputTokens": 29289,
+      "outputTokens": 4422,
+      "costUsd": 0.00423278
+    },
+    {
+      "caseId": "staff-permissions",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 8,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 25698,
+      "outputTokens": 6420,
+      "costUsd": 0.004425485
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 27,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "unknown-component",
+          "line": 28,
+          "message": "Atlas has no \"scroll-area\" component."
+        },
+        {
+          "kind": "invalid-prop",
+          "line": 251,
+          "message": "Button has no size \"sm\". It accepts: default, lg, icon."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 258,
+          "message": "The class border-amber-300 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 258,
+          "message": "The class bg-amber-50 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 258,
+          "message": "The class text-amber-900 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 259,
+          "message": "The class text-amber-700 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 261,
+          "message": "The class text-amber-800 is a fixed palette color; it ignores the theme."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 444,
+          "message": "The class text-emerald-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 274,
+      "outputTokens": 11611,
+      "costUsd": 0.005832899999999999
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 10,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 23254,
+      "outputTokens": 10577,
+      "costUsd": 0.007259755
+    },
+    {
+      "caseId": "offline-banner",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 11,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 48523,
+      "outputTokens": 15357,
+      "costUsd": 0.010990295
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "without-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [
+        {
+          "kind": "unknown-component",
+          "line": 14,
+          "message": "Atlas has no \"separator\" component."
+        },
+        {
+          "kind": "hard-coded-color",
+          "line": 232,
+          "message": "The class text-amber-600 is a fixed palette color; it ignores the theme."
+        }
+      ],
+      "rendered": false,
+      "renderError": "cannot resolve import \"@/components/ui/separator\"",
+      "valid": false,
+      "toolCalls": 0,
+      "selfChecks": 0,
+      "requests": 1,
+      "inputTokens": 280,
+      "outputTokens": 4954,
+      "costUsd": 0.002505
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "docs-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "toolCalls": 8,
+      "selfChecks": 0,
+      "requests": 3,
+      "inputTokens": 19795,
+      "outputTokens": 6309,
+      "costUsd": 0.004891179999999999
+    },
+    {
+      "caseId": "weekly-report-card",
+      "variant": "with-mcp",
+      "run": 3,
+      "hasCode": true,
+      "issues": [],
+      "rendered": true,
+      "valid": true,
+      "firstDraft": {
+        "issues": [],
+        "rendered": true,
+        "valid": true
+      },
+      "toolCalls": 9,
+      "selfChecks": 1,
+      "requests": 4,
+      "inputTokens": 41954,
+      "outputTokens": 9956,
+      "costUsd": 0.00742313
+    }
+  ]
+}

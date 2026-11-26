@@ -1,0 +1,29 @@
+packages:
+  - packages/*
+  - mcp
+  - evals
+  - site
+
+# One React in the whole repository: two copies break hooks when Radix resolves
+# a different React than the component's.
+overrides:
+  react: 19.3.1
+  react-dom: 19.3.1
+
+minimumReleaseAgeExclude:
+  - '@vitest/coverage-v8@5.1.2'
+  - '@vitest/mocker@5.1.2'
+  - '@vitest/spy@5.1.2'
+  - vitest@5.1.2
+  - '@types/react@19.3.3'
+  - lucide-react@1.80.0
+  - '@storybook/addon-a11y@10.6.9'
+  - '@storybook/addon-docs@10.6.9'
+  - '@storybook/builder-vite@10.6.9'
+  - '@storybook/react-dom-shim@10.6.9'
+  - '@storybook/react-vite@10.6.9'
+  - '@storybook/react@10.6.9'
+  - storybook@10.6.9
+
+allowBuilds:
+  esbuild: false # its postinstall only re-checks the platform binary, which comes as an optional dependency

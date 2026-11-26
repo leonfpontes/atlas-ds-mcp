@@ -1,0 +1,122 @@
+[
+  {
+    "id": "orders-table",
+    "prompt": "Build the orders page for Fernhill Market's admin: a table of today's orders with order number, customer, items, total and a status badge (paid, packing, shipped, refunded), plus a search field above the table.",
+    "expectedComponents": ["Table", "Badge", "Input"],
+    "notes": "Table with five columns; each status is a Badge variant (success, warning, info, destructive) with a text label, never color alone; the search field is an Input with a visible label. No hard-coded colors."
+  },
+  {
+    "id": "product-form",
+    "prompt": "Create the 'Add product' form for Fernhill Market: name, price, category (Produce, Bakery, Dairy, Pantry), stock quantity and a short description, with Save product and Cancel buttons.",
+    "expectedComponents": ["Input", "Select", "Button", "Card"],
+    "notes": "Form inside a Card; category is a Select; every field has a label; primary Button 'Save product' and an outline 'Cancel'. Errors appear under the field in the destructive color."
+  },
+  {
+    "id": "sales-dashboard",
+    "prompt": "Design the Fernhill Market sales dashboard: four summary cards (revenue today, orders, average basket, returns), a tab switch between Today, This week and This month, and a table of the top 5 products.",
+    "expectedComponents": ["Card", "Tabs", "Table", "Badge"],
+    "notes": "Four Cards with the number as the main element; Tabs change the period; the top-products Table follows. Trends are Badges with an arrow and text, not color alone. Numbers are marked as example data."
+  },
+  {
+    "id": "empty-orders",
+    "prompt": "Show the Fernhill Market orders page when the store has no orders yet: explain why the list is empty and offer a button to share the store link.",
+    "expectedComponents": ["Card", "Button"],
+    "notes": "Empty state inside a Card: a title that says what is missing, one sentence on what to do, one primary Button 'Copy store link'. No illustration, no table header with zero rows."
+  },
+  {
+    "id": "checkout-error",
+    "prompt": "Build the Fernhill Market checkout step that shows a declined card: keep the order summary, show what went wrong and let the shopper try another card.",
+    "expectedComponents": ["Alert", "Card", "Button", "Input"],
+    "notes": "Destructive Alert at the top that says what happened and what to do next; the order summary Card stays; card fields are Inputs; primary Button 'Pay with another card'. The error is not only red: it has an icon and text."
+  },
+  {
+    "id": "delete-product-dialog",
+    "prompt": "Add a confirmation before deleting a product in Fernhill Market's catalog: the dialog names the product and warns that its sales history stays.",
+    "expectedComponents": ["Dialog", "Button"],
+    "notes": "Dialog with a title naming the product, one sentence on the consequence, a destructive Button 'Delete product' and an outline 'Keep product'. Focus starts on the safe action and Esc closes."
+  },
+  {
+    "id": "inventory-low-stock",
+    "prompt": "Create the Fernhill Market inventory screen: a table of products with stock level, a warning for items below their reorder point, and a filter by category.",
+    "expectedComponents": ["Table", "Badge", "Alert", "Select"],
+    "notes": "Warning Alert summarizes how many items are low; low rows show a warning Badge with text; the category filter is a Select. Amber only for warning."
+  },
+  {
+    "id": "customer-profile",
+    "prompt": "Design a customer profile page for Fernhill Market's support team: contact details, loyalty tier, the last 10 orders and an internal note field.",
+    "expectedComponents": ["Card", "Badge", "Table", "Input"],
+    "notes": "Details in a Card; loyalty tier as a Badge; last orders in a Table; the note is a labeled Input with a 'Save note' Button. Customer data is fictitious."
+  },
+  {
+    "id": "delivery-slot-picker",
+    "prompt": "Build the delivery slot picker for Fernhill Market's checkout: choose a day and a two-hour window, with full slots shown as unavailable.",
+    "expectedComponents": ["Tabs", "Button", "Badge", "Tooltip"],
+    "notes": "Days as Tabs; each window is a Button; full windows are disabled with a Badge 'Full' and a Tooltip with the reason. The selected slot is clear without color alone."
+  },
+  {
+    "id": "command-search",
+    "prompt": "Add a global command menu (Cmd+K) to Fernhill Market's admin to jump to orders, products, customers and settings.",
+    "expectedComponents": ["Command", "Dialog"],
+    "notes": "Command inside a Dialog, opened with Cmd+K; results grouped by type; arrow keys move, Enter opens, Esc closes; an empty result says 'No results for …'."
+  },
+  {
+    "id": "mobile-filters-sheet",
+    "prompt": "On mobile, Fernhill Market's product list needs filters (category, price range, in stock only) in a panel that slides from the side.",
+    "expectedComponents": ["Sheet", "Select", "Input", "Button"],
+    "notes": "Filters inside a Sheet; category is a Select, price range is two labeled Inputs; footer with 'Show 24 products' and 'Clear filters' Buttons. Controls are 44 px tall on touch."
+  },
+  {
+    "id": "order-detail",
+    "prompt": "Create the order detail page for Fernhill Market: items with quantity and price, delivery address, payment status and buttons to refund or print the receipt.",
+    "expectedComponents": ["Card", "Table", "Badge", "Button"],
+    "notes": "Items in a Table inside a Card; payment status as a Badge; 'Refund order' is an outline Button that opens a confirmation, 'Print receipt' is secondary. Totals align right."
+  },
+  {
+    "id": "settings-store",
+    "prompt": "Build the Fernhill Market store settings page with tabs for General, Delivery and Payments; the General tab has the store name, contact email and time zone.",
+    "expectedComponents": ["Tabs", "Input", "Select", "Button", "Sonner"],
+    "notes": "Tabs for the three sections; General has labeled Inputs and a Select for the time zone; 'Save changes' Button shows a Sonner toast 'Settings saved' on success."
+  },
+  {
+    "id": "loading-orders",
+    "prompt": "Show the Fernhill Market orders table while the data is loading, then the loaded state.",
+    "expectedComponents": ["Table", "Button"],
+    "notes": "Loading state keeps the table header and shows placeholder rows with an accessible 'Loading orders' label; the refresh Button shows a spinner and 'Loading…'. Nothing jumps when the data arrives."
+  },
+  {
+    "id": "supplier-invite",
+    "prompt": "Design the 'Invite a supplier' flow for Fernhill Market: email, company name and the categories they supply, with a success message after sending.",
+    "expectedComponents": ["Dialog", "Input", "Select", "Button", "Sonner"],
+    "notes": "Form in a Dialog; labeled Inputs and a Select; primary Button 'Send invite'; after success the Dialog closes and a Sonner toast confirms with the email address."
+  },
+  {
+    "id": "promotions-list",
+    "prompt": "Build the promotions page for Fernhill Market: active, scheduled and ended promotions, each with its discount, dates and status, and a button to create a new one.",
+    "expectedComponents": ["Tabs", "Table", "Badge", "Button"],
+    "notes": "Tabs for the three groups; a Table per tab; status as a Badge with text; 'Create promotion' as the primary Button at the top right. Ended promotions are muted, not hidden."
+  },
+  {
+    "id": "refund-success",
+    "prompt": "After a refund in Fernhill Market's admin, show the confirmation: amount, method and when the customer will see it, with a link back to the order.",
+    "expectedComponents": ["Alert", "Card", "Button"],
+    "notes": "Success Alert with an icon and text; a Card with the refund details; a link-style Button 'Back to order'. Green is paired with the check icon and words."
+  },
+  {
+    "id": "staff-permissions",
+    "prompt": "Create the Fernhill Market staff page: a table of staff members with their role (Owner, Manager, Cashier) and a way to change a role, with a tooltip explaining each role.",
+    "expectedComponents": ["Table", "Select", "Tooltip", "Badge"],
+    "notes": "Table of people; role changes through a Select per row; a Tooltip on the role header explains each role; the owner row has a Badge 'You' and its Select is disabled."
+  },
+  {
+    "id": "offline-banner",
+    "prompt": "Show what Fernhill Market's point-of-sale screen does when the connection drops: sales keep working offline and sync later.",
+    "expectedComponents": ["Alert", "Badge", "Button"],
+    "notes": "Warning Alert at the top: 'You're offline. Sales are saved on this device and sync when you reconnect.' A Badge counts unsynced sales; a 'Try again' Button. No blocking modal."
+  },
+  {
+    "id": "weekly-report-card",
+    "prompt": "Design a weekly report card for Fernhill Market's owner: revenue against last week, best-selling product, and a button to download the report as CSV.",
+    "expectedComponents": ["Card", "Badge", "Button", "Tooltip"],
+    "notes": "One Card; revenue as the main number with a Badge for the change (arrow + text); a Tooltip explains how the change is calculated; outline Button 'Download CSV'. Numbers are marked as example data."
+  }
+]

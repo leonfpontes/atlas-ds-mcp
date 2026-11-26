@@ -1,0 +1,10 @@
+# The design direction, kept as approved.
+docs/DESIGN.md
+pnpm-lock.yaml
+dist/
+coverage/
+storybook-static/
+playwright-report/
+test-results/
+# Screens written by the model in the evaluation: kept exactly as generated.
+evals/results/screens/
