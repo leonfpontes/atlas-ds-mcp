@@ -48,11 +48,23 @@ export function GateReason({ error }: { error?: string }) {
           id: 'states',
           label: 'States',
           node: (
-            <div className="grid gap-6 rounded-lg border p-5">
-              <ReasonField />
-              <ReasonField defaultValue="Also refuse a quantity above the stock, with 409." />
-              <ReasonField defaultValue="Fix it" error="Say what to change in at least 10 characters." />
-              <ReasonField defaultValue="Approved by the owner." disabled />
+            <div className="grid gap-6 rounded-lg border p-5 max-[900px]:p-4">
+              {(
+                [
+                  ['empty', {}],
+                  ['filled', { defaultValue: 'Also refuse a quantity above the stock, with 409.' }],
+                  [
+                    'error',
+                    { defaultValue: 'Fix it', error: 'Say what to change in at least 10 characters.' },
+                  ],
+                  ['disabled', { defaultValue: 'Approved by the owner.', disabled: true }],
+                ] as const
+              ).map(([state, props]) => (
+                <div key={state} className="grid gap-2">
+                  <span className="font-mono text-xs text-muted-foreground">{state}</span>
+                  <ReasonField {...props} />
+                </div>
+              ))}
             </div>
           ),
         },

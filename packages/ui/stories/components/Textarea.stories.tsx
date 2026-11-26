@@ -25,7 +25,7 @@ export function ReasonField({
 }) {
   const id = useId()
   return (
-    <div className="grid w-[420px] max-w-[calc(100vw-32px)] gap-2">
+    <div className="grid w-full max-w-[420px] gap-2">
       <label htmlFor={id} className="text-sm leading-none font-medium">
         Reason
       </label>
