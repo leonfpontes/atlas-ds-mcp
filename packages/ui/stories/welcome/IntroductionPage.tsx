@@ -103,7 +103,7 @@ export function IntroductionPage() {
                       id={pageId('Components', 'Alert')}
                       className="flex min-h-8 items-center text-sm text-muted-foreground no-underline hover:text-foreground hover:underline pointer-coarse:min-h-11"
                     >
-                      All 13 →
+                      All {GROUPS.Components.length} →
                     </DocLink>
                   </li>
                 )}

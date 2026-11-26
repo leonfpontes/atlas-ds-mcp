@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@leonfpontes/atlas-ui'
 import type { ReactNode } from 'react'
 
+import { READY_LINE } from '../lib/atlas-facts'
 import { CopyButton } from './CopyButton'
 import { INSTALL } from './Hero'
 import { Section, SectionHead } from './Section'
@@ -24,9 +25,7 @@ function ReadyCheck() {
         <span className="text-code-dim select-none">$ </span>
         {CHECK}
       </span>
-      <span className="block text-code-add">
-        Atlas MCP ready · 0.1.0 · 5 tools · 13 components · 77 tokens · stdio
-      </span>
+      <span className="block text-code-add">{READY_LINE}</span>
     </>
   )
 }

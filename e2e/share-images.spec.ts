@@ -7,7 +7,7 @@ import { expect, type Page, test } from '@playwright/test'
 
 const site = new URL('../site/', import.meta.url)
 // Served by the second web server in playwright.config.ts (vite dev, so share.html exists).
-const shareUrl = 'http://127.0.0.1:4174/share.html?theme=light'
+const shareUrl = process.env.E2E_SHARE_URL ?? 'http://127.0.0.1:4174/share.html?theme=light'
 
 /** Share of pixels that differ by more than a small tolerance, measured in the browser. */
 async function pixelDiff(page: Page, a: Buffer, b: Buffer): Promise<number> {

@@ -100,7 +100,8 @@ describe('How it works', () => {
     ).toHaveAttribute('href', '/storybook/')
   })
 
-  it('has no axe violations (contrast is checked in the browser)', async () => {
+  // axe walks the whole page in jsdom: well over Vitest's 5 s default on a busy machine.
+  it('has no axe violations (contrast is checked in the browser)', { timeout: 20_000 }, async () => {
     render(<HowItWorks />)
     expect(await violations()).toEqual([])
   })

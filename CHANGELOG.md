@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versions: [Sem
 
 ### Added
 
+- `@leonfpontes/atlas-ui` 0.2.0: Textarea, Skeleton and Progress from the shadcn/ui source with the Atlas theme (Textarea starts at 88 px and resizes only vertically; Skeleton is hidden from screen readers and stops pulsing with reduced motion; Progress has a `--secondary` track and the `neutral` and `destructive` variants for budgets), each with stories, a docs page, component and axe tests and a manifest entry whose example renders with the real components.
+- `@leonfpontes/design-system-mcp` 0.2.0: `list_components` lists 16 components; the site reads its component and token counts from the files the server serves.
+- `@leonfpontes/atlas-tokens` 0.2.0: no token changes; the three packages keep one version.
+
+## [0.1.0] · 2026-11-26
+
+### Added
+
 - Public repository: [github.com/leonfpontes/atlas-ds-mcp](https://github.com/leonfpontes/atlas-ds-mcp); the site and the read-only MCP endpoint run on Vercel.
 - Repository skeleton: README, agent rules, CI, secret scanning, Dependabot and ADR 0001.
 - pnpm monorepo with `@leonfpontes/atlas-tokens`, `@leonfpontes/atlas-ui`, `@leonfpontes/design-system-mcp`, `atlas-evals` and `atlas-site` (ADR 0002).

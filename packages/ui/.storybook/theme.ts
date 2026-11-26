@@ -3,6 +3,8 @@ import { themeColors, type TokenTree } from '@leonfpontes/atlas-tokens'
 import tokens from '@leonfpontes/atlas-tokens/tokens.json'
 import { create } from 'storybook/theming'
 
+import pkg from '../package.json'
+
 export type Mode = 'light' | 'dark'
 
 const colors = themeColors(tokens as TokenTree)
@@ -23,7 +25,7 @@ const MARK = (mode: Mode) =>
     )
     .join('')}<rect x="13" y="13" width="9" height="9" rx="2" fill="${color('primary', mode)}"/></svg>`
 
-export const VERSION = '0.1.0'
+export const VERSION = pkg.version
 
 export function atlasTheme(mode: Mode) {
   const c = (name: string) => color(name, mode)

@@ -15,7 +15,7 @@ flowchart LR
 | Folder            | What it has                                                                                                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `packages/tokens` | `@leonfpontes/atlas-tokens`: `tokens.json` (DTCG), the helpers to read it and the build of `tokens.css` and `theme.css`                                                  |
-| `packages/ui`     | `@leonfpontes/atlas-ui`: the 13 shadcn/ui components with the Atlas theme, `styles.css`, the component manifest and the Storybook (its build writes `storybook-static/`) |
+| `packages/ui`     | `@leonfpontes/atlas-ui`: the 16 shadcn/ui components with the Atlas theme, `styles.css`, the component manifest and the Storybook (its build writes `storybook-static/`) |
 | `mcp`             | `@leonfpontes/design-system-mcp`: the MCP server, stdio and HTTP ([API](API.md))                                                                                         |
 | `evals`           | `atlas-evals` (private): cases, harness, prompts and the results the site and README read                                                                                |
 | `site`            | `atlas-site` (private, Vite): How it works, 404, share images and demo; its build copies the Storybook to `/storybook/`                                                  |

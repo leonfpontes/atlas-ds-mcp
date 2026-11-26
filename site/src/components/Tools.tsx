@@ -1,8 +1,9 @@
+import { COMPONENTS_SAMPLE } from '../lib/atlas-facts'
 import { LINKS } from '../lib/links'
 import { Section, SectionHead } from './Section'
 
 const TOOLS = [
-  ['list_components', 'Every component with a one-line summary', '13 components: Alert, Badge, Button…'],
+  ['list_components', 'Every component with a one-line summary', COMPONENTS_SAMPLE],
   ['get_component', 'Props, variants, examples and the import line', '{ import, variants: 6, props: 4 }'],
   ['list_tokens', 'Tokens by type, with light and dark values', '--primary · #0B5CAD · #6FA8F5'],
   ['search_usage', "Usage rules: do and don't", '"One primary button per view"'],

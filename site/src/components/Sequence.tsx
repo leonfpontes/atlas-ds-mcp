@@ -1,3 +1,4 @@
+import { COMPONENT_COUNT } from '../lib/atlas-facts'
 import { Section, SectionHead } from './Section'
 
 type Msg = {
@@ -12,7 +13,7 @@ type Msg = {
 const BEFORE: Msg[] = [
   { n: 1, from: 'agent', to: 'server', label: 'list_components()', mobile: 'Agent → server' },
   { n: 2, from: 'server', to: 'atlas', label: 'read registry', mobile: 'Server → Atlas' },
-  { n: 3, from: 'server', to: 'agent', label: '13 components', mobile: 'Server → agent' },
+  { n: 3, from: 'server', to: 'agent', label: `${COMPONENT_COUNT} components`, mobile: 'Server → agent' },
   { n: 4, from: 'agent', to: 'server', label: 'get_component("Table")', mobile: 'Agent → server' },
   { n: 5, from: 'server', to: 'agent', label: 'props · import · rules', mobile: 'Server → agent' },
 ]

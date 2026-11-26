@@ -128,7 +128,7 @@ Reproduce with `ANTHROPIC_API_KEY=… pnpm eval`, then `pnpm readme`.
 | Folder            | What it has                                                      |
 | ----------------- | ---------------------------------------------------------------- |
 | `packages/tokens` | Design tokens (W3C format) and the shadcn/ui and Tailwind themes |
-| `packages/ui`     | The 13 components, their manifest and the Storybook              |
+| `packages/ui`     | The 16 components, their manifest and the Storybook              |
 | `mcp`             | The MCP server and its five tools                                |
 | `evals`           | The evaluation harness, the 20 cases and the results             |
 | `site`            | The How it works page, with the Storybook under `/storybook/`    |

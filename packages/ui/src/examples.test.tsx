@@ -1,6 +1,7 @@
 // Every example in atlas.manifest.json is what get_component hands to a coding agent, which
 // copies it. Each one has to render with the real components, the way an app would use it.
 import { render } from '@testing-library/react'
+import axe from 'axe-core'
 import * as lucide from 'lucide-react'
 import * as jsxRuntime from 'react/jsx-runtime'
 import * as sonner from 'sonner'
@@ -78,5 +79,18 @@ describe('manifest examples render with the real components', () => {
     const Example = load(asFile(example))
     expect(() => render(<Example open setOpen={() => {}} />)).not.toThrow()
     expect(errors.mock.calls.map((c) => String(c[0])).join('\n')).toBe('')
+  })
+
+  // An agent copies the example as it is, so it has to be accessible as it is too.
+  it.each(cases)('%s has no axe violations', async (_, example) => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    const Example = load(asFile(example))
+    const { container } = render(<Example open setOpen={() => {}} />)
+    const result = await axe.run(container, {
+      rules: { 'color-contrast': { enabled: false }, region: { enabled: false } },
+    })
+    expect(
+      result.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`),
+    ).toEqual([])
   })
 })

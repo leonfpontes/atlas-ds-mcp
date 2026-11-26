@@ -12,12 +12,15 @@ const raw = JSON.parse(
 )
 
 describe('component manifest', () => {
-  it('covers exactly the components the evaluation cases expect', () => {
+  it('has every component the evaluation cases expect', () => {
+    // The 20 cases of the 0.1.0 scoreboard stay as they are; components added later (Textarea,
+    // Skeleton, Progress in 0.2.0) only have to exist, not appear in a case.
     const cases = JSON.parse(readFileSync(new URL('../../evals/cases.json', import.meta.url), 'utf8')) as {
       expectedComponents: string[]
     }[]
     const expected = new Set(cases.flatMap((c) => c.expectedComponents))
-    expect(manifest.components.map((c) => c.name).sort()).toEqual([...expected].sort())
+    const names = new Set(manifest.components.map((c) => c.name))
+    expect([...expected].filter((n) => !names.has(n))).toEqual([])
   })
 
   it('gives every enum prop its values, and the values include the default', () => {

@@ -37,7 +37,11 @@ const modes: [RenderMode, boolean][] = [
   ['components', built],
 ]
 
-describe.each(modes)('renderScreen with %s', (mode, available) => {
+// Each case starts a Node process that renderScreen already stops after 20 s. Vitest's 5 s
+// default cut it short on a busy machine, before that real limit: give the cases 30 s.
+const RENDER_TEST_TIMEOUT = 30_000
+
+describe.each(modes)('renderScreen with %s', { timeout: RENDER_TEST_TIMEOUT }, (mode, available) => {
   const render = (code: string, timeoutMs?: number) => renderScreen(code, { mode, timeoutMs })
 
   it.runIf(available)('renders a screen built from Atlas, React, lucide and sonner', async () => {
@@ -100,7 +104,7 @@ describe.each(modes)('renderScreen with %s', (mode, available) => {
   })
 })
 
-describe.runIf(built)('renderScreen with the real components', () => {
+describe.runIf(built)('renderScreen with the real components', { timeout: RENDER_TEST_TIMEOUT }, () => {
   it('fails on an icon lucide-react does not have', async () => {
     const result = await renderScreen(good.replace(/\bCheck\b/g, 'NotARealIcon'), { mode: 'components' })
     expect(result.rendered).toBe(false)

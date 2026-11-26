@@ -1,6 +1,6 @@
 {
   "$comment": "Provisional manifest written with story B2 so the MCP server can be built and tested. Story F1 takes it over: it must match the real components in src/components/ui. Format: docs/API.md#manifest.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "importBase": "@/components/ui",
   "components": [
     {
@@ -294,6 +294,48 @@
       "storybook": "components-input--docs"
     },
     {
+      "name": "Progress",
+      "summary": "A bar that shows how much of a known total is used, such as a budget.",
+      "file": "progress",
+      "exports": ["Progress"],
+      "props": [
+        {
+          "component": "Progress",
+          "name": "value",
+          "type": "number",
+          "description": "How much is done, from 0 to max."
+        },
+        {
+          "component": "Progress",
+          "name": "max",
+          "type": "number",
+          "default": "100",
+          "description": "The total the value is measured against."
+        },
+        {
+          "component": "Progress",
+          "name": "variant",
+          "type": "enum",
+          "values": ["default", "neutral", "destructive"],
+          "default": "default",
+          "description": "default uses --primary; neutral (--foreground) for budgets and limits; destructive when the total is passed."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Budget used",
+          "code": "<Progress value={66} variant=\"neutral\" aria-label=\"66% of the budget used\" />\n<p>$3.30 of $5.00</p>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Name the bar with aria-label and write the number next to it: the bar is never the only signal."
+        ],
+        "dont": ["Don't use Progress for a wait with no known end; use a spinner with a label."]
+      },
+      "storybook": "components-progress--docs"
+    },
+    {
       "name": "Select",
       "summary": "Picks one option from a short list.",
       "file": "select",
@@ -364,6 +406,27 @@
         "dont": ["Don't stack a Sheet on top of a Dialog."]
       },
       "storybook": "components-sheet--docs"
+    },
+    {
+      "name": "Skeleton",
+      "summary": "A grey block that keeps the shape of content while it loads.",
+      "file": "skeleton",
+      "exports": ["Skeleton"],
+      "props": [],
+      "examples": [
+        {
+          "title": "Loading rows",
+          "code": "<div role=\"region\" aria-label=\"Runs\" aria-busy=\"true\">\n  <Skeleton className=\"h-4 w-48\" />\n  <Skeleton className=\"mt-2 h-4 w-32\" />\n</div>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Match the shape and size of the content that will replace it.",
+          "Give the region that is loading role=\"region\", a label and aria-busy=\"true\"; the Skeleton itself is hidden from screen readers."
+        ],
+        "dont": ["Don't leave a skeleton on screen with no end: after a timeout, show the error state."]
+      },
+      "storybook": "components-skeleton--docs"
     },
     {
       "name": "Sonner",
@@ -470,6 +533,41 @@
       "storybook": "components-tabs--docs"
     },
     {
+      "name": "Textarea",
+      "summary": "A multi-line text field for a comment or a reason. Always with a visible label.",
+      "file": "textarea",
+      "exports": ["Textarea"],
+      "props": [
+        {
+          "component": "Textarea",
+          "name": "aria-invalid",
+          "type": "boolean",
+          "default": "false",
+          "description": "Turns the border and ring to destructive. Pair it with a message under the field."
+        },
+        {
+          "component": "Textarea",
+          "name": "rows",
+          "type": "number",
+          "description": "Starting height in lines; the field starts at 88 px and grows with the text."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Reason with a label and a hint",
+          "code": "<label htmlFor=\"reason\">Reason</label>\n<Textarea id=\"reason\" aria-describedby=\"reason-hint\" placeholder=\"For example: keep stock checks out of scope for now\" />\n<p id=\"reason-hint\">The agent reads this before it tries again.</p>"
+        }
+      ],
+      "usage": {
+        "do": ["Give it a visible <label> and link hints and errors with aria-describedby."],
+        "dont": [
+          "Don't use the placeholder as the label.",
+          "Don't use a Textarea for a one-line value; use an Input."
+        ]
+      },
+      "storybook": "components-textarea--docs"
+    },
+    {
       "name": "Tooltip",
       "summary": "A short hint on hover or focus, for icon buttons and abbreviations.",
       "file": "tooltip",
@@ -526,7 +624,7 @@
     {
       "id": "status-color-icon-text",
       "title": "Status is color, icon shape and text together",
-      "components": ["Badge", "Alert"],
+      "components": ["Badge", "Alert", "Progress"],
       "tags": ["status", "color", "icon", "accessibility", "success", "warning", "error", "info"],
       "do": [
         "Use the success, warning, info and destructive variants, each with its text and icon.",
@@ -553,7 +651,7 @@
     {
       "id": "visible-labels",
       "title": "Every field has a visible label",
-      "components": ["Input", "Select"],
+      "components": ["Input", "Select", "Textarea"],
       "tags": ["form", "label", "input", "accessibility"],
       "do": ["Put a label above the field and tie it with htmlFor and id."],
       "dont": ["Don't rely on the placeholder as the label."]
