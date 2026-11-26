@@ -11,9 +11,9 @@ import {
 } from './tools.js'
 
 describe('list_components', () => {
-  it('lists the 13 components in alphabetical order with their import line', () => {
+  it('lists the 16 components in alphabetical order with their import line', () => {
     const { count, components } = listComponents(data)
-    expect(count).toBe(13)
+    expect(count).toBe(16)
     expect(components.map((c) => c.name)).toEqual([
       'Alert',
       'Badge',
@@ -22,11 +22,14 @@ describe('list_components', () => {
       'Command',
       'Dialog',
       'Input',
+      'Progress',
       'Select',
       'Sheet',
+      'Skeleton',
       'Sonner',
       'Table',
       'Tabs',
+      'Textarea',
       'Tooltip',
     ])
     expect(components.find((c) => c.name === 'Badge')?.import).toBe(

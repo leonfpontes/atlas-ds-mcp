@@ -11,7 +11,7 @@ const fail = (message) => {
 }
 
 const ready = execFileSync(process.execPath, [bin, '--check'], { encoding: 'utf8' }).trim()
-if (!/^Atlas MCP ready · .+ · 5 tools · 13 components · \d+ tokens · stdio$/.test(ready))
+if (!/^Atlas MCP ready · .+ · 5 tools · 16 components · \d+ tokens · stdio$/.test(ready))
   fail(`unexpected ready line: ${ready}`)
 
 const canonical = `import { Badge } from "@/components/ui/badge"

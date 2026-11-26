@@ -15,7 +15,7 @@ const bin = path.join(root, 'mcp/dist/cli.js')
 const built = existsSync(bin)
 
 const TOOLS = ['get_component', 'list_components', 'list_tokens', 'search_usage', 'validate_screen']
-const READY = /^Atlas MCP ready · \d+\.\d+\.\d+ · 5 tools · 13 components · \d+ tokens · (stdio|http)/
+const READY = /^Atlas MCP ready · \d+\.\d+\.\d+ · 5 tools · 16 components · \d+ tokens · (stdio|http)/
 
 // One file with the four mistakes validate_screen knows, one per rule (docs/API.md).
 const FOUR_MISTAKES = `import { Badge } from "@/components/ui/badge"

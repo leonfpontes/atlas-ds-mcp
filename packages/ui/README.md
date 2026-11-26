@@ -1,8 +1,8 @@
 # @leonfpontes/atlas-ui
 
-The 13 Atlas components: shadcn/ui (Radix + Tailwind CSS v4) themed with
+The 16 Atlas components: shadcn/ui (Radix + Tailwind CSS v4) themed with
 [`@leonfpontes/atlas-tokens`](https://www.npmjs.com/package/@leonfpontes/atlas-tokens).
-Alert, Badge, Button, Card, Command, Dialog, Input, Select, Sheet, Sonner (toast), Table, Tabs and Tooltip.
+Alert, Badge, Button, Card, Command, Dialog, Input, Progress, Select, Sheet, Skeleton, Sonner (toast), Table, Tabs, Textarea and Tooltip.
 
 ```css
 /* your global CSS */

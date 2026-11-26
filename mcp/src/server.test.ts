@@ -276,7 +276,7 @@ describe('Origin (MCP spec: DNS rebinding)', () => {
 describe('ready line', () => {
   it('says the server is ready, with what it serves', () => {
     expect(readyLine(data, 'stdio')).toMatch(
-      /^Atlas MCP ready · 0\.1\.0 · 5 tools · 13 components · \d+ tokens · stdio$/,
+      /^Atlas MCP ready · 0\.2\.0 · 5 tools · 16 components · \d+ tokens · stdio$/,
     )
   })
 })
