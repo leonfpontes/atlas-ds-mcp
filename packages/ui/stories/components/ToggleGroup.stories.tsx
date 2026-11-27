@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Box, List, Square } from 'lucide-react'
 import { useId } from 'react'
 
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
@@ -33,22 +32,13 @@ export function SearchMode() {
   )
 }
 
-/** A view switch on a canvas toolbar: ghost, with icons and words. */
+/** A view switch on a canvas toolbar: ghost, words only (an outlined square would read as an unchecked box). */
 export function GraphView() {
   return (
     <ToggleGroup type="single" variant="ghost" defaultValue="3d" aria-label="Graph view">
-      <ToggleGroupItem value="3d">
-        <Box aria-hidden />
-        3D
-      </ToggleGroupItem>
-      <ToggleGroupItem value="2d">
-        <Square aria-hidden />
-        2D
-      </ToggleGroupItem>
-      <ToggleGroupItem value="list">
-        <List aria-hidden />
-        List
-      </ToggleGroupItem>
+      <ToggleGroupItem value="3d">3D</ToggleGroupItem>
+      <ToggleGroupItem value="2d">2D</ToggleGroupItem>
+      <ToggleGroupItem value="list">List</ToggleGroupItem>
     </ToggleGroup>
   )
 }

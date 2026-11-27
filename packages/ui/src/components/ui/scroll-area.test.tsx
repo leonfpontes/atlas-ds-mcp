@@ -62,6 +62,17 @@ describe('ScrollArea', () => {
     expect((viewport().firstElementChild as HTMLElement).style.display).toBe('table')
   })
 
+  it('keeps the vertical bar 3 px in from the edge, clear of the focus ring and the border', () => {
+    render(
+      <ScrollArea type="always" aria-label="Neighbors" className="h-40">
+        x
+      </ScrollArea>,
+    )
+    const bar = document.querySelector('[data-slot="scroll-area-scrollbar"][data-orientation="vertical"]')
+    expect(bar).toHaveClass('my-[3px]', 'me-[3px]')
+    expect(bar).not.toHaveClass('h-full')
+  })
+
   it('takes a horizontal scrollbar', () => {
     render(
       <ScrollArea type="always" className="w-40">
@@ -71,7 +82,7 @@ describe('ScrollArea', () => {
     )
     expect(
       document.querySelector('[data-slot="scroll-area-scrollbar"][data-orientation="horizontal"]'),
-    ).toHaveClass('h-2.5', 'flex-col')
+    ).toHaveClass('h-2.5', 'flex-col', 'mx-[3px]', 'mb-[3px]')
   })
 
   it('has no axe violations, with and without a label', async () => {

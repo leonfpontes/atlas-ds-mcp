@@ -53,8 +53,9 @@ function ScrollBar({
       orientation={orientation}
       className={cn(
         'flex touch-none p-px transition-colors select-none',
-        orientation === 'vertical' && 'h-full w-2.5 border-l border-l-transparent',
-        orientation === 'horizontal' && 'h-2.5 flex-col border-t border-t-transparent',
+        // 3 px in from the edge, so the bar never covers the inner focus ring or the border.
+        orientation === 'vertical' && 'my-[3px] me-[3px] w-2.5 border-l border-l-transparent',
+        orientation === 'horizontal' && 'mx-[3px] mb-[3px] h-2.5 flex-col border-t border-t-transparent',
         className,
       )}
       {...props}
