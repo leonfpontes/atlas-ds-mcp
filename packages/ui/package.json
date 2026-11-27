@@ -1,6 +1,6 @@
 {
   "name": "@leonfpontes/atlas-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Atlas React components: shadcn/ui themed with the Atlas tokens.",
   "type": "module",
   "license": "MIT",

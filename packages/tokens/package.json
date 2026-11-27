@@ -1,6 +1,6 @@
 {
   "name": "@leonfpontes/atlas-tokens",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Atlas design tokens in the W3C Design Tokens (DTCG) format, with light and dark themes.",
   "type": "module",
   "license": "MIT",

@@ -5,7 +5,7 @@ components and usage rules of the Atlas design system, and checks the screens th
 
 ```bash
 claude mcp add atlas -- npx -y @leonfpontes/design-system-mcp
-npx -y @leonfpontes/design-system-mcp --check   # Atlas MCP ready · … · 5 tools · 16 components
+npx -y @leonfpontes/design-system-mcp --check   # Atlas MCP ready · … · 5 tools · 22 components
 ```
 
 Five read-only tools: `list_components`, `get_component`, `list_tokens`, `search_usage` and
