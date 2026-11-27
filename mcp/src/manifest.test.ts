@@ -38,7 +38,13 @@ describe('component manifest', () => {
     for (const c of manifest.components) {
       const imports = manifest.components.map((x) => importLine(manifest, x)).join('\n')
       for (const e of c.examples) {
-        const code = `${imports}\nimport { toast } from "sonner"\nimport { Copy, TriangleAlert } from "lucide-react"\nexport function Example({ open, setOpen }) {\n  return (\n    <>\n${e.code.replace(/^\/\/.*$/gm, '')}\n    </>\n  )\n}\n`
+        // The lucide icons the example draws, imported as the agent's file would.
+        const icons = [
+          ...new Set(['Copy', 'TriangleAlert', ...(e.code.match(/(?<=<)[A-Z]\w+(?=\s*\/>)/g) ?? [])]),
+        ]
+          .filter((n) => !manifest.components.some((x) => x.exports.includes(n)))
+          .join(', ')
+        const code = `${imports}\nimport { toast } from "sonner"\nimport { ${icons} } from "lucide-react"\nexport function Example({ open, setOpen }) {\n  return (\n    <>\n${e.code.replace(/^\/\/.*$/gm, '')}\n    </>\n  )\n}\n`
         const result = validateScreen(code, manifest)
         expect(result.issues, `${c.name} · ${e.title}`).toEqual([])
       }

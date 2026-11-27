@@ -1,6 +1,6 @@
 {
   "$comment": "Provisional manifest written with story B2 so the MCP server can be built and tested. Story F1 takes it over: it must match the real components in src/components/ui. Format: docs/API.md#manifest.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "importBase": "@/components/ui",
   "components": [
     {
@@ -90,6 +90,58 @@
       "storybook": "components-badge--docs"
     },
     {
+      "name": "Breadcrumb",
+      "aliases": ["breadcrumbs", "path", "trail"],
+      "summary": "The path from a section to the current page, with a link for each level above it.",
+      "file": "breadcrumb",
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ],
+      "props": [
+        {
+          "component": "Breadcrumb",
+          "name": "aria-label",
+          "type": "string",
+          "default": "Breadcrumb",
+          "description": "Name of the navigation landmark."
+        },
+        {
+          "component": "BreadcrumbLink",
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false",
+          "description": "Render the router's own link (e.g. <Link>) with the breadcrumb styles."
+        },
+        {
+          "component": "BreadcrumbSeparator",
+          "name": "children",
+          "type": "node",
+          "default": "/",
+          "description": "What goes between two levels; a slash unless you pass something else."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Note path",
+          "code": "<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/explore\">Explore</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/explore?type=decision\">Decisions</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbPage className=\"font-mono\">frame-supplier.md</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Link every level above the page; the last item is a BreadcrumbPage, which carries aria-current=\"page\".",
+          "Put a BreadcrumbSeparator between items, never inside a BreadcrumbItem."
+        ],
+        "dont": ["Don't use a breadcrumb as the main navigation or for steps of a flow."]
+      },
+      "storybook": "components-breadcrumb--docs"
+    },
+    {
       "name": "Button",
       "summary": "Starts an action. One primary button per view.",
       "file": "button",
@@ -173,6 +225,100 @@
         "dont": ["Don't build a grid of identical cards with an icon in a rounded square."]
       },
       "storybook": "components-card--docs"
+    },
+    {
+      "name": "Checkbox",
+      "aliases": ["check", "checkbox filter", "tick"],
+      "summary": "An on or off choice, alone or in a list of filters; a dash for a group that is partly on.",
+      "file": "checkbox",
+      "exports": ["Checkbox"],
+      "props": [
+        {
+          "component": "Checkbox",
+          "name": "checked",
+          "type": "enum",
+          "values": ["true", "false", "indeterminate"],
+          "description": "Controlled state; indeterminate shows a dash for a group that is partly checked."
+        },
+        {
+          "component": "Checkbox",
+          "name": "defaultChecked",
+          "type": "boolean",
+          "default": "false",
+          "description": "Starting state when uncontrolled."
+        },
+        {
+          "component": "Checkbox",
+          "name": "onCheckedChange",
+          "type": "function",
+          "description": "Called with the new state: true or false."
+        },
+        {
+          "component": "Checkbox",
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Shown at half opacity and cannot be changed."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Filter list",
+          "code": "<fieldset className=\"grid gap-0.5\">\n  <legend className=\"mb-2 text-sm font-medium\">Note types</legend>\n  <label className=\"flex min-h-10 items-center gap-3 text-sm\">\n    <Checkbox defaultChecked />\n    Person\n    <span className=\"ml-auto font-mono text-[13px] text-muted-foreground\">42</span>\n  </label>\n  <label className=\"flex min-h-10 items-center gap-3 text-sm\">\n    <Checkbox />\n    Decision\n    <span className=\"ml-auto font-mono text-[13px] text-muted-foreground\">18</span>\n  </label>\n</fieldset>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Wrap the checkbox and its text in one <label>, so the text names it and clicking the text toggles it.",
+          "Leave at least 12 px (gap-3) next to it: its 40 px hit area reaches past the 16 px box."
+        ],
+        "dont": ["Don't use a checkbox for an action that runs at once; use a Button."]
+      },
+      "storybook": "components-checkbox--docs"
+    },
+    {
+      "name": "Collapsible",
+      "aliases": ["disclosure", "expander", "details", "accordion"],
+      "summary": "A section that opens and closes from a button, such as a table of properties.",
+      "file": "collapsible",
+      "exports": ["Collapsible", "CollapsibleTrigger", "CollapsibleContent"],
+      "props": [
+        {
+          "component": "Collapsible",
+          "name": "defaultOpen",
+          "type": "boolean",
+          "default": "false",
+          "description": "Starts open when uncontrolled."
+        },
+        {
+          "component": "Collapsible",
+          "name": "open",
+          "type": "boolean",
+          "description": "Controlled state, with onOpenChange."
+        },
+        {
+          "component": "CollapsibleTrigger",
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false",
+          "description": "Use your own Button as the trigger; it gets aria-expanded and data-state."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Properties",
+          "code": "<Collapsible defaultOpen>\n  <CollapsibleTrigger asChild>\n    <Button variant=\"ghost\" className=\"-ml-3 [&[data-state=open]>svg]:rotate-180\">\n      Properties\n      <ChevronDown />\n    </Button>\n  </CollapsibleTrigger>\n  <CollapsibleContent>\n    <dl className=\"grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 font-mono text-[13px]\">\n      <dt className=\"text-muted-foreground\">type</dt>\n      <dd className=\"m-0\">decision</dd>\n      <dt className=\"text-muted-foreground\">updated</dt>\n      <dd className=\"m-0\">2026-03-14</dd>\n    </dl>\n  </CollapsibleContent>\n</Collapsible>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Make the trigger a Button (asChild) whose text names the section, with a chevron that turns when it opens."
+        ],
+        "dont": [
+          "Don't hide the only copy of something people need to finish a task inside a closed section."
+        ]
+      },
+      "storybook": "components-collapsible--docs"
     },
     {
       "name": "Command",
@@ -260,6 +406,61 @@
       "storybook": "components-dialog--docs"
     },
     {
+      "name": "HoverCard",
+      "aliases": ["preview", "peek", "popover preview", "citation preview"],
+      "summary": "A preview card that opens when the pointer rests on, or the keyboard focuses, a link.",
+      "file": "hover-card",
+      "exports": ["HoverCard", "HoverCardTrigger", "HoverCardContent"],
+      "props": [
+        {
+          "component": "HoverCard",
+          "name": "openDelay",
+          "type": "number",
+          "default": "300",
+          "description": "Milliseconds the pointer rests before it opens."
+        },
+        {
+          "component": "HoverCard",
+          "name": "closeDelay",
+          "type": "number",
+          "default": "200",
+          "description": "Milliseconds before it closes once the pointer leaves."
+        },
+        {
+          "component": "HoverCardContent",
+          "name": "side",
+          "type": "enum",
+          "values": ["top", "right", "bottom", "left"],
+          "default": "bottom",
+          "description": "Side of the trigger it opens on; it flips when there is no room."
+        },
+        {
+          "component": "HoverCardContent",
+          "name": "align",
+          "type": "enum",
+          "values": ["start", "center", "end"],
+          "default": "start",
+          "description": "Alignment against the trigger."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Citation preview",
+          "code": "<p>\n  The frame order moved to March{\" \"}\n  <HoverCard>\n    <HoverCardTrigger href=\"#source-1\" aria-label=\"Source 1: Frame supplier decision\">\n      [1]\n    </HoverCardTrigger>\n    <HoverCardContent>\n      <strong>Frame supplier decision</strong>\n      <span className=\"font-mono text-[13px] text-muted-foreground\">frame-supplier.md · chunk 1 of 3</span>\n      <blockquote className=\"m-0 border-l-[3px] pl-3\">We move the frame order to March.</blockquote>\n    </HoverCardContent>\n  </HoverCard>\n  .\n</p>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Make the trigger a link to the same content: the card is a preview, and touch screens never open it.",
+          "Keep it short: a title, one line of context and an excerpt."
+        ],
+        "dont": [
+          "Don't put buttons or forms in a hover card; it closes when the pointer leaves. Use a Dialog or a Sheet."
+        ]
+      },
+      "storybook": "components-hover-card--docs"
+    },
+    {
       "name": "Input",
       "summary": "A single-line text field. Always paired with a visible label.",
       "file": "input",
@@ -334,6 +535,51 @@
         "dont": ["Don't use Progress for a wait with no known end; use a spinner with a label."]
       },
       "storybook": "components-progress--docs"
+    },
+    {
+      "name": "ScrollArea",
+      "aliases": ["scroll", "scroller", "scroll view", "scrollable panel"],
+      "summary": "A box of fixed height whose content scrolls, with an Atlas scrollbar, such as a side panel of filters.",
+      "file": "scroll-area",
+      "exports": ["ScrollArea", "ScrollBar"],
+      "props": [
+        {
+          "component": "ScrollArea",
+          "name": "type",
+          "type": "enum",
+          "values": ["auto", "always", "scroll", "hover"],
+          "default": "auto",
+          "description": "When the scrollbar shows: auto whenever the content overflows."
+        },
+        {
+          "component": "ScrollArea",
+          "name": "aria-label",
+          "type": "string",
+          "description": "Name the area when nothing inside takes focus: the viewport becomes a named region keyboard users can scroll."
+        },
+        {
+          "component": "ScrollBar",
+          "name": "orientation",
+          "type": "enum",
+          "values": ["vertical", "horizontal"],
+          "default": "vertical",
+          "description": "Add <ScrollBar orientation=\"horizontal\" /> inside for content that scrolls sideways."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Neighbors panel",
+          "code": "<ScrollArea aria-label=\"Neighbors\" className=\"h-48 rounded-lg border\">\n  <ul className=\"m-0 grid list-none gap-1 p-4 text-sm\">\n    <li>Frame supplier</li>\n    <li>March production plan</li>\n    <li>Weekly sync, 14 March</li>\n    <li>Dealer pricing sheet</li>\n    <li>Battery warranty terms</li>\n    <li>Color options review</li>\n    <li>Spring launch checklist</li>\n  </ul>\n</ScrollArea>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Give it a fixed height (or max-h) on the root; without one nothing scrolls.",
+          "Add aria-label when the content has no links or controls, so the keyboard can reach and scroll it."
+        ],
+        "dont": ["Don't wrap the whole page in a ScrollArea; let the page scroll on its own."]
+      },
+      "storybook": "components-scroll-area--docs"
     },
     {
       "name": "Select",
@@ -566,6 +812,56 @@
         ]
       },
       "storybook": "components-textarea--docs"
+    },
+    {
+      "name": "ToggleGroup",
+      "aliases": ["segmented control", "segmented", "button group", "toggle"],
+      "summary": "A row of joined buttons: pick one mode (single), or turn several options on (multiple).",
+      "file": "toggle-group",
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
+      "props": [
+        {
+          "component": "ToggleGroup",
+          "name": "type",
+          "type": "enum",
+          "values": ["single", "multiple"],
+          "description": "single is a radio group that always keeps one value once picked; multiple is a toolbar of toggles."
+        },
+        {
+          "component": "ToggleGroup",
+          "name": "variant",
+          "type": "enum",
+          "values": ["outline", "ghost"],
+          "default": "outline",
+          "description": "outline is the joined segmented control; ghost has no border, for toolbars."
+        },
+        {
+          "component": "ToggleGroup",
+          "name": "value",
+          "type": "string",
+          "description": "Controlled value (an array of strings with type=\"multiple\"), with onValueChange."
+        },
+        {
+          "component": "ToggleGroupItem",
+          "name": "value",
+          "type": "string",
+          "description": "The value this item stands for."
+        }
+      ],
+      "examples": [
+        {
+          "title": "Search mode",
+          "code": "<ToggleGroup type=\"single\" defaultValue=\"hybrid\" aria-label=\"Search\">\n  <ToggleGroupItem value=\"hybrid\">Hybrid</ToggleGroupItem>\n  <ToggleGroupItem value=\"vectors\">Vectors</ToggleGroupItem>\n  <ToggleGroupItem value=\"graph\">Graph</ToggleGroupItem>\n</ToggleGroup>"
+        }
+      ],
+      "usage": {
+        "do": [
+          "Name the group with aria-label or aria-labelledby.",
+          "Use it for two to five short options that change the view or the mode in place."
+        ],
+        "dont": ["Don't use a ToggleGroup to switch between panels of content; that is Tabs."]
+      },
+      "storybook": "components-toggle-group--docs"
     },
     {
       "name": "Tooltip",

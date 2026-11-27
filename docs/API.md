@@ -18,7 +18,7 @@ there changes this page in the same PR.
 On start the server prints one line (stderr on stdio, so the protocol on stdout stays clean):
 
 ```
-Atlas MCP ready · 0.2.0 · 5 tools · 16 components · 77 tokens · stdio
+Atlas MCP ready · 0.3.0 · 5 tools · 22 components · 77 tokens · stdio
 ```
 
 If it can't start, it prints `Atlas didn't start: <reason>` and what to check, and exits 1.

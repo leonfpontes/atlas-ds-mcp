@@ -11,10 +11,21 @@ export function ChangelogPage() {
       file="stories/welcome/ChangelogPage.tsx"
       {...nav('Changelog')}
       toc={[
+        { id: 'v0-3-0', label: '0.3.0' },
         { id: 'v0-2-0', label: '0.2.0' },
         { id: 'v0-1-0', label: '0.1.0' },
       ]}
     >
+      <Section id="v0-3-0" title="0.3.0">
+        <ul className="m-0 grid gap-1.5 pl-[18px] text-muted-foreground">
+          <li>
+            Checkbox, Toggle Group, Hover Card, Collapsible, Breadcrumb and Scroll Area, from the shadcn/ui
+            source with the Atlas theme.
+          </li>
+          <li>Checkbox keeps the 16 px box inside a 40 px target; Toggle Group single never empties.</li>
+          <li>list_components lists 22 components.</li>
+        </ul>
+      </Section>
       <Section id="v0-2-0" title="0.2.0">
         <ul className="m-0 grid gap-1.5 pl-[18px] text-muted-foreground">
           <li>Textarea, Skeleton and Progress, from the shadcn/ui source with the Atlas theme.</li>

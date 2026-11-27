@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versions: [Sem
 
 ### Added
 
+- `@leonfpontes/atlas-ui` 0.3.0: Checkbox, Toggle Group, Hover Card, Collapsible, Breadcrumb and Scroll Area from the shadcn/ui source with the Atlas theme (Checkbox keeps the 16 px box inside a 40 px target, 44 on touch; Toggle Group is the joined segmented control and `type="single"` never empties; Hover Card opens after 300 ms and on focus; Breadcrumb uses a slash and leaves the current page as plain text; Scroll Area shows its scrollbar whenever the content overflows and becomes a named region with `aria-label`), each with stories, a docs page, component and axe tests and a manifest entry.
+- `@leonfpontes/design-system-mcp` 0.3.0: `list_components` lists 22 components; `validate_screen` sends the Radix packages of the new components, and names such as SegmentedControl, Accordion and ScrollView, to the Atlas component.
+- `@leonfpontes/atlas-tokens` 0.3.0: no token changes; the three packages keep one version.
+
+## [0.2.0] · 2026-11-26
+
+### Added
+
 - `@leonfpontes/atlas-ui` 0.2.0: Textarea, Skeleton and Progress from the shadcn/ui source with the Atlas theme (Textarea starts at 88 px and resizes only vertically; Skeleton is hidden from screen readers and stops pulsing with reduced motion; Progress has a `--secondary` track and the `neutral` and `destructive` variants for budgets), each with stories, a docs page, component and axe tests and a manifest entry whose example renders with the real components.
 - `@leonfpontes/design-system-mcp` 0.2.0: `list_components` lists 16 components; the site reads its component and token counts from the files the server serves.
 - `@leonfpontes/atlas-tokens` 0.2.0: no token changes; the three packages keep one version.

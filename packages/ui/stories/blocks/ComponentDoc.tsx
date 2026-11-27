@@ -198,6 +198,8 @@ export function ComponentDoc(props: ComponentDocProps) {
     extra = [],
   } = props
   const title = props.title ?? name
+  // "Hover Card" is the page; HoverCard.mdx and HoverCardExample.tsx are the files.
+  const fileBase = title.replace(/ /g, '')
   const c = component(name)
   const importLine = `import { ${c.exports.join(', ')} } from "${manifest.importBase}/${c.file}"`
   const extraImports = (c.extraImports ?? []).map((x) => `import { ${x.names.join(', ')} } from "${x.from}"`)
@@ -217,7 +219,7 @@ export function ComponentDoc(props: ComponentDocProps) {
       crumb={['Components', title]}
       title={title}
       lead={lead}
-      file={`stories/components/${title}.mdx`}
+      file={`stories/components/${fileBase}.mdx`}
       toc={toc}
       prev={prev}
       next={next}
@@ -243,7 +245,7 @@ export function ComponentDoc(props: ComponentDocProps) {
       }
     >
       <Section id="preview">
-        <Canvas name={title} {...canvas} file={`${title}Example.tsx`} />
+        <Canvas name={title} {...canvas} file={`${fileBase}Example.tsx`} />
       </Section>
       <Section id="installation" title="Installation">
         <div className="grid gap-2">
