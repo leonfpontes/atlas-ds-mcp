@@ -117,6 +117,14 @@ describe('unknown-component', () => {
     expect(issue?.fix).toContain('Use Dialog:')
   })
 
+  it('points the names agents use for the 0.3.0 components to them', () => {
+    const fixes = (tag: string) => check(file(`    <${tag} />`)).issues.map((i) => i.fix)
+    expect(fixes('SegmentedControl')[0]).toContain('Use ToggleGroup:')
+    expect(fixes('Accordion')[0]).toContain('Use Collapsible:')
+    expect(fixes('ScrollView')[0]).toContain('Use ScrollArea:')
+    expect(fixes('Breadcrumbs')[0]).toContain('Use Breadcrumb:')
+  })
+
   it('accepts components the file defines, imports from elsewhere or receives as props', () => {
     const code = `import { Copy } from "lucide-react"
 import { OrdersTable } from "./orders-table"
@@ -204,6 +212,22 @@ export const S = () => <Button>Save order</Button>
         'import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog" — Atlas wraps Radix with the theme and labels.',
       ],
     ])
+  })
+})
+
+describe('internal-import of the 0.3.0 primitives', () => {
+  it.each([
+    ['checkbox', 'Checkbox'],
+    ['toggle-group', 'ToggleGroup'],
+    ['hover-card', 'HoverCard'],
+    ['collapsible', 'Collapsible'],
+    ['scroll-area', 'ScrollArea'],
+    ['progress', 'Progress'],
+  ])('sends @radix-ui/react-%s to the Atlas %s', (pkg, name) => {
+    const code = `import * as Primitive from "@radix-ui/react-${pkg}"\nexport const S = () => <Primitive.Root />\n`
+    const [issue] = check(code).issues
+    expect(issue?.rule).toBe('internal-import')
+    expect(issue?.fix).toMatch(new RegExp(`^import \\{ ${name}\\b`))
   })
 })
 

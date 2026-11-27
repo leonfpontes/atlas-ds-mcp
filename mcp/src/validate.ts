@@ -257,6 +257,14 @@ const SYNONYMS: Record<string, string> = {
   hint: 'Tooltip',
   iconbutton: 'Button',
   link: 'Button',
+  segmented: 'ToggleGroup',
+  segmentedcontrol: 'ToggleGroup',
+  buttongroup: 'ToggleGroup',
+  accordion: 'Collapsible',
+  disclosure: 'Collapsible',
+  expander: 'Collapsible',
+  scrollview: 'ScrollArea',
+  scrollable: 'ScrollArea',
 }
 
 const FOREIGN_UI =
@@ -269,6 +277,14 @@ const RADIX_TO_ATLAS: Record<string, string> = {
   tabs: 'Tabs',
   tooltip: 'Tooltip',
   toast: 'Sonner',
+  progress: 'Progress',
+  checkbox: 'Checkbox',
+  toggle: 'ToggleGroup',
+  'toggle-group': 'ToggleGroup',
+  'hover-card': 'HoverCard',
+  collapsible: 'Collapsible',
+  accordion: 'Collapsible',
+  'scroll-area': 'ScrollArea',
 }
 
 function distance(a: string, b: string): number {
